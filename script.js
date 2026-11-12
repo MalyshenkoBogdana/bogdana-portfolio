@@ -6,7 +6,7 @@ const projectData = {
     ['Photo 02','IMAGE','var(--pink)'],['Video','VIDEO','var(--coral)'],['Photo 01','IMAGE','var(--yellow)']
   ],
   fragrance: [
-    ['HERO / The Fragrance','IMAGE','var(--pink)'],['TOP NOTES / The Spark','IMAGE','var(--yellow)'],['HEART / The Bloom','IMAGE','var(--lime)'],['TRANSITION / The Drop','IMAGE','var(--turquoise)'],['BASE / The Trail','IMAGE','var(--coral)'],['COMPLETE FRAGRANCE / FINAL HERO','IMAGE','var(--pink)'],['VIDEO 01 — THE EVOLUTION','VIDEO','var(--blue)'],['VIDEO 02 — THE SCENT IN MOTION','VIDEO','var(--turquoise)']
+    ['Video 02','VIDEO','var(--moss)'],['Photo 01','IMAGE','var(--pink)'],['Photo 02','IMAGE','var(--yellow)'],['Photo 03','IMAGE','var(--lime)'],['Photo 04','IMAGE','var(--turquoise)'],['Photo 05','IMAGE','var(--coral)'],['Photo 06','IMAGE','var(--pink)'],['Video 01','VIDEO','var(--moss)']
   ]
 };
 // Add supplied originals here. Values can be a path string or {src, poster}.
@@ -23,7 +23,15 @@ const mediaManifest = {
   'fashion|Video': 'assets/fashion/09-video.mp4',
   'jewelry|Photo 02': 'assets/jewelry/01-leo-photo-02.jpg',
   'jewelry|Video': 'assets/jewelry/02-leo-video.mp4',
-  'jewelry|Photo 01': 'assets/jewelry/03-leo-photo-01.jpg'
+  'jewelry|Photo 01': 'assets/jewelry/03-leo-photo-01.jpg',
+  'fragrance|Video 02': 'assets/fragrance/01-video-02.mp4',
+  'fragrance|Photo 01': 'assets/fragrance/02-photo-01.png',
+  'fragrance|Photo 02': 'assets/fragrance/03-photo-02.png',
+  'fragrance|Photo 03': 'assets/fragrance/04-photo-03.png',
+  'fragrance|Photo 04': 'assets/fragrance/05-photo-04.jpeg',
+  'fragrance|Photo 05': 'assets/fragrance/06-photo-05.png',
+  'fragrance|Photo 06': 'assets/fragrance/07-photo-06.png',
+  'fragrance|Video 01': 'assets/fragrance/08-video-01.mp4'
 };
 const explorationData = [
   {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
