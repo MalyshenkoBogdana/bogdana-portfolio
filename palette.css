@@ -284,3 +284,30 @@
   .work-grid[data-layout="surreal"] .work-item:nth-child(3){grid-column:1 / span 6;grid-row:2;aspect-ratio:.82 / 1;margin:18px 0 0}
   .work-grid[data-layout="surreal"] .work-item:nth-child(4){grid-column:7 / span 6;grid-row:2;aspect-ratio:.8 / 1;margin:0}
 }
+
+/* Restrained hand-painted accents, repeated in a few different rhythms. */
+.hero-title-wrap{isolation:isolate}
+.hero-title-wrap::after{content:"";position:absolute;z-index:0;left:31%;top:54%;width:clamp(128px,22vw,280px);height:clamp(9px,1.2vw,15px);background:rgba(241,111,88,.27);clip-path:polygon(0 36%,18% 18%,37% 30%,56% 7%,78% 22%,100% 0,96% 66%,74% 79%,52% 62%,31% 100%,11% 72%);transform:rotate(-2deg);pointer-events:none}
+.hero h1{z-index:1}
+#selected-projects{position:relative;isolation:isolate;overflow:visible}
+#selected-projects::before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(ellipse 26% 11% at 88% 14%,rgba(243,165,184,.2),transparent 75%),radial-gradient(ellipse 28% 12% at 10% 57%,rgba(217,239,85,.13),transparent 76%),linear-gradient(128deg,transparent 74%,rgba(248,245,239,.07) 74.2% 74.7%,transparent 75%)}
+.section-heading,#selected-projects .project{position:relative;z-index:1}
+.project-meta h3{position:relative}
+.project-fashion .project-meta h3::after,.project-jewelry .project-meta h3::after,.project-fragrance .project-meta h3::after{border-radius:12px;clip-path:polygon(0 23%,19% 8%,40% 20%,62% 0,81% 16%,100% 7%,96% 79%,73% 90%,52% 74%,28% 100%,6% 80%)}
+#contact::before{content:"";position:absolute;pointer-events:none;inset:-10% 0;background:radial-gradient(ellipse 24% 34% at 83% 30%,rgba(241,111,88,.16),transparent 76%),radial-gradient(ellipse 18% 26% at 14% 86%,rgba(40,85,245,.12),transparent 78%)}
+.site-footer .footer-brand{position:relative}
+.site-footer .footer-brand::after{content:"";position:absolute;left:2%;right:4%;bottom:-5px;height:2px;background:rgba(243,165,184,.6);transform:rotate(-1deg);border-radius:50%}
+#exploration-groups .group-head h3::after{width:54px;height:4px;margin-top:10px;border-radius:10px;clip-path:polygon(0 28%,24% 10%,48% 24%,73% 0,100% 17%,96% 73%,68% 100%,43% 78%,18% 100%,4% 75%)}
+#creative-explorations.explorations::before{background:radial-gradient(ellipse 35% 12% at 15% 10%,rgba(243,165,184,.19),transparent 76%),radial-gradient(ellipse 25% 11% at 88% 39%,rgba(217,239,85,.15),transparent 78%),radial-gradient(ellipse 28% 14% at 25% 75%,rgba(37,185,176,.12),transparent 78%),radial-gradient(ellipse 24% 10% at 92% 91%,rgba(241,111,88,.13),transparent 78%)}
+#exploration-groups .work-grid[data-layout="beauty"]::after{width:88px;height:12px;border:0;border-radius:0;background:rgba(40,85,245,.36);clip-path:polygon(0 36%,22% 16%,48% 35%,74% 0,100% 20%,93% 71%,66% 86%,43% 66%,18% 100%,4% 72%);transform:rotate(9deg);opacity:.74}
+#exploration-groups .work-grid[data-layout="surreal"]::before{width:80px;height:13px;background:rgba(217,239,85,.72);clip-path:polygon(0 30%,20% 12%,44% 26%,66% 0,100% 18%,94% 66%,69% 83%,43% 64%,19% 100%,4% 72%);transform:rotate(-10deg);opacity:.72}
+#exploration-groups .work-grid[data-layout="surreal"]::after{right:4%;bottom:9%;width:70px;height:10px;border:0;border-radius:0;background:rgba(241,111,88,.48);clip-path:polygon(0 35%,26% 12%,50% 25%,75% 0,100% 19%,95% 67%,69% 85%,44% 66%,20% 100%,5% 72%);transform:rotate(7deg)}
+#exploration-groups .explore-group:nth-child(2)::after{left:23%;width:66px;height:8px;border:0;border-radius:0;background:rgba(40,85,245,.42);clip-path:polygon(0 32%,24% 10%,50% 30%,76% 0,100% 19%,93% 72%,68% 84%,44% 68%,20% 100%,5% 74%);transform:rotate(-7deg);opacity:.72}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){.hero-title-wrap::after{opacity:.8}}
+@media(max-width:700px){
+  .hero-title-wrap::after{left:26%;top:54%;width:138px;height:9px}
+  #selected-projects::before{background:radial-gradient(ellipse 38% 8% at 88% 12%,rgba(243,165,184,.18),transparent 75%),radial-gradient(ellipse 34% 9% at 10% 59%,rgba(217,239,85,.12),transparent 76%)}
+  #exploration-groups .work-grid[data-layout="beauty"]::after{width:52px;height:8px}
+  #exploration-groups .work-grid[data-layout="surreal"]::before{width:54px;height:9px}
+  #exploration-groups .work-grid[data-layout="surreal"]::after{width:48px;height:8px}
+}
