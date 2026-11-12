@@ -315,3 +315,6 @@
   #exploration-groups .work-grid[data-layout="surreal"]::before{width:54px;height:9px}
   #exploration-groups .work-grid[data-layout="surreal"]::after{width:48px;height:8px}
 }
+.project-fragrance .carousel{isolation:isolate;overflow:hidden}
+.project-fragrance .carousel::before{width:148%;height:154%;left:-24%;top:-27%;border-radius:43% 57% 38% 62% / 44% 34% 66% 56%;background:radial-gradient(ellipse 60% 48% at 48% 50%,rgba(89,100,91,.27),transparent 82%),radial-gradient(ellipse 74% 39% at 57% 44%,rgba(225,226,216,.96),transparent 78%),radial-gradient(ellipse 56% 28% at 34% 59%,rgba(197,112,126,.16),transparent 82%),linear-gradient(116deg,transparent 23%,rgba(197,112,126,.09) 42% 59%,transparent 78%);filter:blur(9px);transform:rotate(-7deg)}
+@media(max-width:700px){.project-fragrance .carousel::before{width:142%;height:132%;left:-21%;top:-16%;transform:rotate(-5deg)}}
