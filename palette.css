@@ -293,7 +293,11 @@
 #selected-projects::before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(ellipse 26% 11% at 88% 14%,rgba(243,165,184,.2),transparent 75%),radial-gradient(ellipse 28% 12% at 10% 57%,rgba(217,239,85,.13),transparent 76%),linear-gradient(128deg,transparent 74%,rgba(248,245,239,.07) 74.2% 74.7%,transparent 75%)}
 .section-heading,#selected-projects .project{position:relative;z-index:1}
 .project-meta h3{position:relative}
-.project-fashion .project-meta h3::after,.project-jewelry .project-meta h3::after,.project-fragrance .project-meta h3::after{border-radius:12px;clip-path:polygon(0 23%,19% 8%,40% 20%,62% 0,81% 16%,100% 7%,96% 79%,73% 90%,52% 74%,28% 100%,6% 80%)}
+.project-fashion .project-meta h3,.project-jewelry .project-meta h3,.project-fragrance .project-meta h3{position:relative;isolation:isolate;display:inline-block}
+.project-fashion .project-meta h3::after,.project-jewelry .project-meta h3::after,.project-fragrance .project-meta h3::after{content:"";position:absolute;z-index:-1;left:-.06em;right:-.1em;bottom:.04em;height:.31em;clip-path:none;border-radius:3px;transform:rotate(-1.3deg)}
+.project-fashion .project-meta h3::after{background:rgba(151,105,75,.58)}
+.project-jewelry .project-meta h3::after{background:rgba(133,91,108,.58)}
+.project-fragrance .project-meta h3::after{background:rgba(197,112,126,.58)}
 #contact::before{content:"";position:absolute;pointer-events:none;inset:-10% 0;background:radial-gradient(ellipse 24% 34% at 83% 30%,rgba(241,111,88,.16),transparent 76%),radial-gradient(ellipse 18% 26% at 14% 86%,rgba(40,85,245,.12),transparent 78%)}
 .site-footer .footer-brand{position:relative}
 .site-footer .footer-brand::after{content:"";position:absolute;left:2%;right:4%;bottom:-5px;height:2px;background:rgba(243,165,184,.6);transform:rotate(-1deg);border-radius:50%}
