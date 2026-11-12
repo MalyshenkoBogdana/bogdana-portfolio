@@ -3,7 +3,7 @@ const projectData = {
     ['HERO / Model + Outfit','IMAGE','var(--pink)'],['Architectural Walk','IMAGE','var(--lime)'],['Portrait','IMAGE','var(--coral)'],['Pool','IMAGE','var(--turquoise)'],['Fashion Detail','IMAGE','var(--yellow)'],['Staircase','IMAGE','var(--pink)'],['Staircase / Open Space','IMAGE','var(--lime)'],['Storyboard','IMAGE','var(--turquoise)'],['Video','VIDEO','var(--coral)']
   ],
   jewelry: [
-    ['Photo 01','IMAGE','var(--pink)'],['Photo 02','IMAGE','var(--yellow)'],['Video','VIDEO','var(--coral)']
+    ['Photo 02','IMAGE','var(--pink)'],['Video','VIDEO','var(--coral)'],['Photo 01','IMAGE','var(--yellow)']
   ],
   fragrance: [
     ['HERO / The Fragrance','IMAGE','var(--pink)'],['TOP NOTES / The Spark','IMAGE','var(--yellow)'],['HEART / The Bloom','IMAGE','var(--lime)'],['TRANSITION / The Drop','IMAGE','var(--turquoise)'],['BASE / The Trail','IMAGE','var(--coral)'],['COMPLETE FRAGRANCE / FINAL HERO','IMAGE','var(--pink)'],['VIDEO 01 — THE EVOLUTION','VIDEO','var(--blue)'],['VIDEO 02 — THE SCENT IN MOTION','VIDEO','var(--turquoise)']
@@ -20,7 +20,10 @@ const mediaManifest = {
   'fashion|Staircase': 'assets/fashion/06-staircase.png',
   'fashion|Staircase / Open Space': 'assets/fashion/07-staircase-open-space.png',
   'fashion|Storyboard': 'assets/fashion/08-storyboard.png',
-  'fashion|Video': 'assets/fashion/09-video.mp4'
+  'fashion|Video': 'assets/fashion/09-video.mp4',
+  'jewelry|Photo 02': 'assets/jewelry/01-leo-photo-02.jpg',
+  'jewelry|Video': 'assets/jewelry/02-leo-video.mp4',
+  'jewelry|Photo 01': 'assets/jewelry/03-leo-photo-01.jpg'
 };
 const explorationData = [
   {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
@@ -76,7 +79,7 @@ document.querySelectorAll('.project').forEach(project=>{
   const id=project.dataset.project, carousel=project.querySelector('.carousel'),track=project.querySelector('.carousel-track'),progress=project.querySelector('.progress');
   const slides=projectData[id];let active=0;const slideElements=[];
   slides.forEach(([label,kind,bg],index)=>{
-    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);const media=makeMedia(label,kind,bg,`${id}|${label}`);slide.append(media);track.append(slide);if(id==='fashion'&&media instanceof HTMLImageElement){const setRatio=()=>{if(media.naturalWidth&&media.naturalHeight)slide.style.aspectRatio=`${media.naturalWidth} / ${media.naturalHeight}`};if(media.complete)setRatio();else media.addEventListener('load',setRatio,{once:true})}slideElements.push(slide);
+    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);const media=makeMedia(label,kind,bg,`${id}|${label}`);slide.append(media);track.append(slide);if((id==='fashion'||id==='jewelry')&&media instanceof HTMLImageElement){const setRatio=()=>{if(media.naturalWidth&&media.naturalHeight)slide.style.aspectRatio=`${media.naturalWidth} / ${media.naturalHeight}`};if(media.complete)setRatio();else media.addEventListener('load',setRatio,{once:true})}slideElements.push(slide);
     const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Go to slide ${index+1}: ${label}`);dot.innerHTML='<span></span>';dot.addEventListener('click',()=>show(index));progress.append(dot);
   });
   const dots=[...progress.querySelectorAll('button')];
