@@ -1,0 +1,48 @@
+/* Compact, work-first art direction: keep the approved content, give the work more of the screen. */
+.site-header{height:64px}
+.hero{height:auto;min-height:380px;padding:20px 7vw 22px}
+.hero-title-wrap{width:min(100%,940px);margin:24px auto 20px}
+.hero h1{font-size:clamp(54px,8.2vw,112px);line-height:.86}
+.hero-spark{font-size:clamp(34px,5vw,66px)}
+.hero-stamp,.hero-color-block{display:none}
+.hero-bottom{width:min(100%,940px)}
+.hero-bottom p{font-size:14px;max-width:330px}
+.hero-rule{width:min(100%,940px);margin-top:18px}
+.projects{padding-top:70px;padding-bottom:84px}
+.section-heading{margin-bottom:45px}
+.section-heading h2,.explore-intro h2{font-size:clamp(58px,7.5vw,96px)}
+.project{margin-bottom:82px}
+.project-meta{margin-bottom:15px}
+.project-meta h3{font-size:clamp(21px,2.5vw,32px)}
+.carousel{height:clamp(340px,49vw,560px)}
+.carousel-footer{margin-top:10px}
+.explorations{padding-top:78px;padding-bottom:86px}
+.explore-intro{margin-bottom:46px}
+.explore-doodle{font-size:58px}
+.explore-group{margin-bottom:58px}
+.work-grid{gap:13px}
+.contact{padding-top:72px;padding-bottom:78px}
+.contact h2{font-size:clamp(62px,8.5vw,116px);margin-top:28px}
+.contact-graphic{width:132px;height:132px}
+.site-footer{min-height:100px;padding-top:22px;padding-bottom:22px}
+@media(max-width:700px){
+  .site-header{height:60px}
+  .hero{min-height:390px;padding:18px 7vw 20px}
+  .hero-title-wrap{margin:34px 0 28px}
+  .hero h1{font-size:clamp(56px,12.8vw,84px);line-height:.89}
+  .hero-spark{font-size:38px;right:2%;top:-12%}
+  .hero-bottom p{font-size:13px;max-width:220px}
+  .hero-rule{margin-top:24px}
+  .projects{padding-top:58px;padding-bottom:65px}
+  .section-heading{margin-bottom:38px}
+  .section-heading h2,.explore-intro h2{font-size:clamp(58px,12vw,82px)}
+  .project{margin-bottom:65px}
+  .carousel{height:clamp(315px,96vw,440px)}
+  .explorations{padding-top:65px;padding-bottom:72px}
+  .explore-intro{margin-bottom:38px}
+  .explore-group{margin-bottom:48px}
+  .contact{padding-top:62px;padding-bottom:65px}
+  .contact h2{font-size:clamp(60px,12vw,83px);margin-top:28px}
+  .contact-graphic{width:90px;height:90px;font-size:7px}
+  .site-footer{min-height:90px;padding-top:20px;padding-bottom:20px}
+}

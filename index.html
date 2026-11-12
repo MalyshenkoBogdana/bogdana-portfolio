@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="Bogdana.M. — AI creator. Visuals / Motion / Creative Direction.">
+  <title>Bogdana.M. — AI Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="compact.css">
+  <link rel="stylesheet" href="refinements.css">
+  <link rel="stylesheet" href="editorial.css">
+  <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="palette.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Bogdana.M. — home">
+      <span class="brand-name">Bogdana.M.</span><span class="brand-role">AI CREATOR</span>
+    </a>
+    <div class="language" aria-label="Language"><button type="button" data-lang="uk" aria-pressed="false">UA</button><span>/</span><button type="button" data-lang="en" aria-pressed="true">EN</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-title-wrap">
+        <h1 id="hero-title" data-uk="Ідеї, що стають<br><em>візуальними</em><br>історіями." data-en="Ideas turned into<br><em>visual</em> stories.">Ideas turned into<br><em>visual</em> stories.</h1>
+        <span class="hero-stamp">AI<br>⇢<br>ART</span>
+      </div>
+      <div class="hero-bottom">
+        <p data-uk="Візуальні концепції, створені за допомогою AI, креативна режисура та motion." data-en="AI-powered visuals, creative direction & motion.">AI-powered visuals, creative direction &amp; motion.</p>
+        <span class="hero-side mono">VISUALS<br>/ MOTION<br>/ CREATIVE DIRECTION</span>
+      </div>
+      <div class="hero-color-block" aria-hidden="true"></div>
+    </section>
+
+    <section class="projects section-pad" id="selected-projects">
+      <div class="section-heading"><div><h2 data-uk="Вибрані<br><i>проєкти</i>" data-en="Selected<br><i>projects</i>">Selected<br><i>projects</i></h2></div></div>
+
+      <article class="project project-fashion" data-project="fashion">
+        <header class="project-meta"><div><h3>FASHION EDITORIAL</h3></div><p data-uk="Фешн-візуали, архітектурні простори та кінематографічна розповідь." data-en="Fashion imagery, architectural settings and cinematic storytelling.">Fashion imagery, architectural settings and cinematic storytelling.</p></header>
+        <div class="carousel" tabindex="0" aria-label="Fashion Editorial carousel" data-carousel="fashion"><button class="carousel-arrow prev" aria-label="Попередній слайд">←</button><div class="carousel-track"></div><button class="carousel-arrow next" aria-label="Наступний слайд">→</button></div>
+        <div class="carousel-footer"><div class="progress" role="group" aria-label="Навігація слайдів"></div></div>
+      </article>
+
+      <article class="project project-jewelry" data-project="jewelry">
+        <header class="project-meta"><div><h3>LUXURY JEWELRY</h3></div><p data-uk="Концептуальна ювелірна кампанія, що поєднує естетику розкоші та візуальну розповідь." data-en="An imaginative jewelry campaign combining luxury aesthetics and visual storytelling.">An imaginative jewelry campaign combining luxury aesthetics and visual storytelling.</p></header>
+        <div class="carousel" tabindex="0" aria-label="Luxury Jewelry carousel" data-carousel="jewelry"><button class="carousel-arrow prev" aria-label="Попередній слайд">←</button><div class="carousel-track"></div><button class="carousel-arrow next" aria-label="Наступний слайд">→</button></div>
+        <div class="carousel-footer"><div class="progress" role="group" aria-label="Навігація слайдів"></div></div>
+      </article>
+
+      <article class="project project-fragrance" data-project="fragrance">
+        <header class="project-meta"><div><h3>FRAGRANCE CAMPAIGN</h3></div><p data-uk="Візуальна історія аромату, розкрита через образи, атмосферу та рух." data-en="A fragrance visual story exploring scent through imagery, atmosphere and motion.">A fragrance visual story exploring scent through imagery, atmosphere and motion.</p></header>
+        <div class="carousel" tabindex="0" aria-label="Fragrance Campaign carousel" data-carousel="fragrance"><button class="carousel-arrow prev" aria-label="Попередній слайд">←</button><div class="carousel-track"></div><button class="carousel-arrow next" aria-label="Наступний слайд">→</button></div>
+        <div class="carousel-footer"><div class="progress" role="group" aria-label="Навігація слайдів"></div></div>
+      </article>
+    </section>
+
+    <section class="explorations section-pad" id="creative-explorations">
+      <div class="explore-intro"><h2 data-uk="Creative<br><i>explorations</i>" data-en="Creative<br><i>explorations</i>">Creative<br><i>explorations</i></h2></div>
+      <div id="exploration-groups"></div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-layout"><h2 data-uk="Маєте ідею<br>для <i>проєкту?</i>" data-en="Have a project<br><i>in mind?</i>">Have a project<br><i>in mind?</i></h2><div class="contact-note"><p data-uk="Створімо щось особливе." data-en="Let's create something distinctive.">Let's create something distinctive.</p><a class="email-placeholder" href="mailto:" aria-label="Email — додайте адресу">email — add address ↗</a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#top">Bogdana.M.</a><span class="brand-role">AI CREATOR</span><span class="footer-descriptor">VISUALS / MOTION / CREATIVE DIRECTION</span><a class="footer-email" href="mailto:">email — додайте адресу ↗</a><span class="copyright">© 2026</span></footer>
+</body>
+</html>

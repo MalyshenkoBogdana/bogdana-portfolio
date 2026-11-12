@@ -1,0 +1,86 @@
+const projectData = {
+  fashion: [
+    ['HERO / Model + Outfit','IMAGE','var(--pink)'],['Architectural Walk','IMAGE','var(--lime)'],['Portrait','IMAGE','var(--coral)'],['Pool','IMAGE','var(--turquoise)'],['Fashion Detail','IMAGE','var(--yellow)'],['Staircase','IMAGE','var(--pink)'],['Staircase / Open Space','IMAGE','var(--lime)'],['Storyboard','IMAGE','var(--turquoise)'],['Video','VIDEO','var(--coral)']
+  ],
+  jewelry: [
+    ['Photo 01','IMAGE','var(--pink)'],['Photo 02','IMAGE','var(--yellow)'],['Video','VIDEO','var(--coral)']
+  ],
+  fragrance: [
+    ['HERO / The Fragrance','IMAGE','var(--pink)'],['TOP NOTES / The Spark','IMAGE','var(--yellow)'],['HEART / The Bloom','IMAGE','var(--lime)'],['TRANSITION / The Drop','IMAGE','var(--turquoise)'],['BASE / The Trail','IMAGE','var(--coral)'],['COMPLETE FRAGRANCE / FINAL HERO','IMAGE','var(--pink)'],['VIDEO 01 — THE EVOLUTION','VIDEO','var(--blue)'],['VIDEO 02 — THE SCENT IN MOTION','VIDEO','var(--turquoise)']
+  ]
+};
+// Add supplied originals here. Values can be a path string or {src, poster}.
+// Example: 'fashion|HERO / Model + Outfit': 'assets/fashion/01-hero.jpg'
+const mediaManifest = {
+  'fashion|HERO / Model + Outfit': 'assets/fashion/01-model-outfit-web.jpg',
+  'fashion|Architectural Walk': 'assets/fashion/02-architectural-walk.png',
+  'fashion|Portrait': 'assets/fashion/03-portrait.png',
+  'fashion|Pool': 'assets/fashion/04-pool.png',
+  'fashion|Fashion Detail': 'assets/fashion/05-fashion-detail.png',
+  'fashion|Staircase': 'assets/fashion/06-staircase.png',
+  'fashion|Staircase / Open Space': 'assets/fashion/07-staircase-open-space.png',
+  'fashion|Storyboard': 'assets/fashion/08-storyboard.png',
+  'fashion|Video': {src:'assets/fashion/09-video.mp4',poster:'assets/fashion/01-model-outfit-web.jpg'}
+};
+const explorationData = [
+  {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
+  {id:'fashion',title:'FASHION & OBJECTS',description:{uk:'Візуали, натхненні модою, виразні об’єкти та експериментальна естетика.',en:'Fashion-inspired visuals, statement objects and experimental aesthetics.'},layout:'fashion',items:[['THE WIND DRESS','VIDEO'],['GLITTER SKIN','IMAGE'],['THE IMPOSSIBLE BAG — DIOR LADY D-LITE','IMAGE']]},
+  {id:'surreal',title:'SURREAL & PLAYFUL',description:{uk:'Уявні світи, сюрреалістичні концепції та несподівані візуальні історії.',en:'Imaginative worlds, surreal concepts and unexpected visual storytelling.'},layout:'surreal',items:[['BABY DRAGON PIZZA CHEF','VIDEO'],['GIANT STRAWBERRY CAKE','IMAGE'],['LEMON HOTEL','IMAGE'],['MANGO PASSION COCKTAIL','IMAGE']]}
+];
+let currentLanguage='uk';
+const langButtons=[...document.querySelectorAll('[data-lang]')];
+function setLanguage(lang){
+  currentLanguage=lang; document.documentElement.lang=lang;
+  langButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+  document.querySelectorAll('[data-uk][data-en]').forEach(el=>{el.innerHTML=el.dataset[lang]});
+  document.querySelectorAll('.email-placeholder,.footer-email').forEach(el=>{el.textContent=lang==='uk'?'email — додайте адресу ↗':'email — add address ↗';el.setAttribute('aria-label',lang==='uk'?'Email — додайте адресу':'Email — add your address')});
+  document.querySelectorAll('.carousel').forEach(el=>{el.setAttribute('aria-label',`${el.dataset.carousel} carousel`)});
+  document.querySelectorAll('.carousel-arrow.prev').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Попередній слайд':'Previous slide'));
+  document.querySelectorAll('.carousel-arrow.next').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Наступний слайд':'Next slide'));
+  document.querySelectorAll('.progress').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Навігація слайдами':'Slide navigation'));
+  document.querySelectorAll('.placeholder-hint').forEach(el=>{el.textContent=el.dataset.kind==='VIDEO'?(lang==='uk'?'ВІДЕО · ДОДАЙТЕ ОРИГІНАЛ':'VIDEO · ADD ORIGINAL'):(lang==='uk'?'МЕДІА-СЛОТ · ДОДАЙТЕ ОРИГІНАЛ':'MEDIA SLOT · ADD ORIGINAL')});
+  document.querySelectorAll('.explore-group .group-head p').forEach((el,index)=>{el.textContent=explorationData[index].description[lang]});
+  document.querySelectorAll('.slide-label').forEach(el=>{el.textContent=el.closest('.project').querySelector('.slide.is-active')?.dataset.label||''});
+}
+langButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+function makePlaceholder(title,kind,bg){
+  const box=document.createElement('div');box.className='asset-placeholder';box.style.setProperty('--slot',bg);
+  const copy=document.createElement('div');copy.className='placeholder-copy';
+  const mark=document.createElement('span');mark.className='video-mark';mark.setAttribute('aria-hidden','true');mark.textContent='▶';
+  const hint=document.createElement('span');hint.className='placeholder-hint';hint.dataset.kind=kind;hint.textContent=kind==='VIDEO'?'ВІДЕО · ДОДАЙТЕ ОРИГІНАЛ':'МЕДІА-СЛОТ · ДОДАЙТЕ ОРИГІНАЛ';
+  if(kind==='VIDEO')copy.append(mark);copy.append(hint);box.append(copy);return box;
+}
+function makeMedia(title,kind,bg,key){
+  const entry=mediaManifest[key];if(!entry)return makePlaceholder(title,kind,bg);
+  const source=typeof entry==='string'?entry:entry.src;
+  if(!source)return makePlaceholder(title,kind,bg);
+  if(kind==='VIDEO'){
+    const video=document.createElement('video');video.className='portfolio-video';video.controls=true;video.preload='none';video.playsInline=true;video.setAttribute('aria-label',title);if(typeof entry==='object'&&entry.poster)video.poster=entry.poster;
+    const sourceEl=document.createElement('source');sourceEl.src=source;video.append(sourceEl);video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()})});return video;
+  }
+  const image=document.createElement('img');image.className='portfolio-image';image.src=source;image.alt=title;image.loading=key==='fashion|HERO / Model + Outfit'?'eager':'lazy';image.fetchPriority=key==='fashion|HERO / Model + Outfit'?'high':'auto';image.decoding='async';return image;
+}
+const carousels=[];
+document.querySelectorAll('.project').forEach(project=>{
+  const id=project.dataset.project, carousel=project.querySelector('.carousel'),track=project.querySelector('.carousel-track'),progress=project.querySelector('.progress');
+  const slides=projectData[id];let active=0;const slideElements=[];
+  slides.forEach(([label,kind,bg],index)=>{
+    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);slide.append(makeMedia(label,kind,bg,`${id}|${label}`));track.append(slide);slideElements.push(slide);
+    const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Go to slide ${index+1}: ${label}`);dot.innerHTML='<span></span>';dot.addEventListener('click',()=>show(index));progress.append(dot);
+  });
+  const dots=[...progress.querySelectorAll('button')];
+  function show(index){active=(index+slides.length)%slides.length;slideElements.forEach((el,i)=>{const d=i-active,wrapped=Math.abs(d)>1;el.classList.toggle('is-active',i===active);el.dataset.offset=wrapped?'far':String(d);el.setAttribute('aria-hidden',String(wrapped));if(i!==active)el.querySelector('video')?.pause()});dots.forEach((dot,i)=>{if(i===active)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current')});}
+  project.querySelector('.prev').addEventListener('click',()=>show(active-1));project.querySelector('.next').addEventListener('click',()=>show(active+1));
+  carousel.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'){event.preventDefault();show(active-1)}if(event.key==='ArrowRight'){event.preventDefault();show(active+1)}});
+  let startX=0,startY=0;carousel.addEventListener('pointerdown',event=>{if(event.target.closest('button'))return;startX=event.clientX;startY=event.clientY});carousel.addEventListener('pointerup',event=>{if(!startX)return;const dx=event.clientX-startX,dy=event.clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)show(active+(dx<0?1:-1));startX=0;startY=0});
+  show(0);carousels.push({show});
+});
+const gallery=document.querySelector('#exploration-groups');
+explorationData.forEach((group,index)=>{
+  const section=document.createElement('section');section.className='explore-group';section.setAttribute('aria-labelledby',`group-${group.id}`);
+  const head=document.createElement('header');head.className='group-head';const h=document.createElement('h3');h.id=`group-${group.id}`;h.textContent=group.title;const desc=document.createElement('p');desc.textContent=group.description.uk;head.append(h,desc);
+  const grid=document.createElement('div');grid.className='work-grid';grid.dataset.layout=group.layout;
+  group.items.forEach(([title,kind],itemIndex)=>{const item=document.createElement('div');item.className=`work-item${kind==='VIDEO'?' video-work':''}`;if(kind!=='VIDEO'){item.setAttribute('role','img');item.setAttribute('aria-label',`${kind==='VIDEO'?'Video':'Image'} placeholder ${itemIndex+1} in ${group.title}`)}const palette=['var(--yellow)','var(--pink)','var(--turquoise)','var(--coral)'];item.append(makeMedia(title,kind,palette[itemIndex%palette.length],`gallery:${group.id}|${title}`));grid.append(item)});
+  section.append(head,grid);gallery.append(section);
+});
+setLanguage('en');

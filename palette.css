@@ -1,0 +1,15 @@
+:root{--wine:#75484c;--stone:#d6c7b6;--muted-gold:#b8a17c;--moss:#59645b;--shell:#e8e0d5}
+.section-heading h2 i{color:var(--wine)}
+.project-fashion .slide.is-active{background:#d6c0b4;border-color:#a98275}
+.project-fashion .asset-placeholder{background:#d9cfc2;color:#62534d}
+.project-fashion .progress button[aria-current=true] span{background:var(--wine)}
+.project-jewelry .slide.is-active{background:var(--shell);border-color:#c5b396;outline-color:#c5b396}
+.project-jewelry .asset-placeholder{background:#e3dace;color:#655f55}
+.project-jewelry .progress button[aria-current=true] span{background:var(--muted-gold)}
+.project-fragrance .slide.is-active{background:var(--moss);border-color:var(--muted-gold)}
+.project-fragrance .asset-placeholder{background:#788078;color:#f8f5ef}
+.project-fragrance .progress button[aria-current=true] span{background:var(--moss)}
+@media(min-width:701px){
+  .project-fashion .carousel{height:clamp(500px,48vw,660px)}
+  .project-fashion .slide{width:min(44%,470px);height:95%}
+}
