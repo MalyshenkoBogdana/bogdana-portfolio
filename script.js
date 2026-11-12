@@ -20,7 +20,7 @@ const mediaManifest = {
   'fashion|Staircase': 'assets/fashion/06-staircase.png',
   'fashion|Staircase / Open Space': 'assets/fashion/07-staircase-open-space.png',
   'fashion|Storyboard': 'assets/fashion/08-storyboard.png',
-  'fashion|Video': {src:'assets/fashion/09-video.mp4',poster:'assets/fashion/01-model-outfit-web.jpg'}
+  'fashion|Video': 'assets/fashion/09-video.mp4'
 };
 const explorationData = [
   {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
@@ -39,6 +39,7 @@ function setLanguage(lang){
   document.querySelectorAll('.carousel-arrow.next').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Наступний слайд':'Next slide'));
   document.querySelectorAll('.progress').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Навігація слайдами':'Slide navigation'));
   document.querySelectorAll('.placeholder-hint').forEach(el=>{el.textContent=el.dataset.kind==='VIDEO'?(lang==='uk'?'ВІДЕО · ДОДАЙТЕ ОРИГІНАЛ':'VIDEO · ADD ORIGINAL'):(lang==='uk'?'МЕДІА-СЛОТ · ДОДАЙТЕ ОРИГІНАЛ':'MEDIA SLOT · ADD ORIGINAL')});
+  document.querySelectorAll('[data-video-toggle]').forEach(button=>button.setAttribute('aria-label',button.closest('.video-frame').querySelector('video').paused?(lang==='uk'?'Відтворити відео':'Play video'):(lang==='uk'?'Призупинити відео':'Pause video')));
   document.querySelectorAll('.explore-group .group-head p').forEach((el,index)=>{el.textContent=explorationData[index].description[lang]});
   document.querySelectorAll('.slide-label').forEach(el=>{el.textContent=el.closest('.project').querySelector('.slide.is-active')?.dataset.label||''});
 }
@@ -55,8 +56,18 @@ function makeMedia(title,kind,bg,key){
   const source=typeof entry==='string'?entry:entry.src;
   if(!source)return makePlaceholder(title,kind,bg);
   if(kind==='VIDEO'){
-    const video=document.createElement('video');video.className='portfolio-video';video.controls=true;video.preload='none';video.playsInline=true;video.setAttribute('aria-label',title);if(typeof entry==='object'&&entry.poster)video.poster=entry.poster;
-    const sourceEl=document.createElement('source');sourceEl.src=source;video.append(sourceEl);video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()})});return video;
+    const frame=document.createElement('div');frame.className='video-frame';
+    const video=document.createElement('video');video.className='portfolio-video';video.controls=false;video.preload='metadata';video.playsInline=true;video.setAttribute('aria-label',title);if(typeof entry==='object'&&entry.poster)video.poster=entry.poster;
+    const sourceEl=document.createElement('source');sourceEl.src=source;video.append(sourceEl);
+    const toggle=document.createElement('button');toggle.type='button';toggle.className='video-toggle';toggle.dataset.videoToggle='';toggle.setAttribute('aria-label',currentLanguage==='uk'?'Відтворити відео':'Play video');
+    toggle.innerHTML='<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.5h3v13h-3zm6 0h3v13h-3z"/></svg>';
+    const updateToggle=()=>{frame.classList.toggle('is-playing',!video.paused);toggle.setAttribute('aria-label',video.paused?(currentLanguage==='uk'?'Відтворити відео':'Play video'):(currentLanguage==='uk'?'Призупинити відео':'Pause video'))};
+    video.addEventListener('loadedmetadata',()=>{if(video.paused)video.currentTime=Math.max(video.duration-.06,0)});
+    video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()});updateToggle()});
+    video.addEventListener('pause',updateToggle);
+    video.addEventListener('ended',()=>{video.currentTime=Math.max(video.duration-.06,0);updateToggle()});
+    toggle.addEventListener('click',()=>{if(video.paused){if(video.currentTime>=video.duration-.2)video.currentTime=0;video.play().catch(()=>updateToggle())}else video.pause()});
+    frame.append(video,toggle);return frame;
   }
   const image=document.createElement('img');image.className='portfolio-image';image.src=source;image.alt=title;image.loading=key==='fashion|HERO / Model + Outfit'?'eager':'lazy';image.fetchPriority=key==='fashion|HERO / Model + Outfit'?'high':'auto';image.decoding='async';return image;
 }
