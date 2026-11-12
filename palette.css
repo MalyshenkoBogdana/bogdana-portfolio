@@ -315,6 +315,6 @@
   #exploration-groups .work-grid[data-layout="surreal"]::before{width:54px;height:9px}
   #exploration-groups .work-grid[data-layout="surreal"]::after{width:48px;height:8px}
 }
-.project-fragrance .carousel{isolation:isolate;overflow:hidden}
-.project-fragrance .carousel::before{width:132%;height:140%;left:-16%;top:-20%;border-radius:48% 52% 57% 43% / 42% 46% 54% 58%;background:radial-gradient(ellipse 60% 52% at 49% 50%,rgba(89,100,91,.24),transparent 82%),radial-gradient(ellipse 73% 44% at 54% 45%,rgba(225,226,216,.94),transparent 78%),radial-gradient(ellipse 48% 30% at 35% 61%,rgba(197,112,126,.13),transparent 82%);filter:blur(8px);transform:rotate(-6deg)}
-@media(max-width:700px){.project-fragrance .carousel::before{width:132%;height:130%;left:-16%;top:-15%;transform:rotate(-5deg)}}
+.project-fragrance .carousel{height:clamp(380px,36vw,500px);isolation:isolate;overflow:hidden}
+.project-fragrance .carousel::before{width:112%;height:88%;left:-6%;top:6%;border-radius:48% 52% 60% 40% / 42% 47% 53% 58%;background:radial-gradient(ellipse 58% 53% at 49% 51%,rgba(89,100,91,.22),transparent 82%),radial-gradient(ellipse 72% 43% at 54% 45%,rgba(225,226,216,.94),transparent 78%),radial-gradient(ellipse 46% 29% at 35% 61%,rgba(197,112,126,.12),transparent 82%);filter:blur(8px);transform:rotate(-6deg)}
+@media(max-width:700px){.project-fragrance .carousel{height:clamp(310px,82vw,400px)}.project-fragrance .carousel::before{width:108%;height:88%;left:-4%;top:6%;transform:rotate(-5deg)}}
