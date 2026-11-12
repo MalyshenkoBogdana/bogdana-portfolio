@@ -39,6 +39,10 @@
 .project-fashion .slide{width:auto;height:100%;aspect-ratio:2 / 3;max-width:min(58%,580px)}
 .project-fashion .slide[data-label="Storyboard"]{width:min(64%,650px);height:auto;max-width:none;aspect-ratio:3 / 2}
 .project-fashion .slide[data-label="Video"]{width:min(80%,780px);height:100%;max-width:none;aspect-ratio:auto}
+.project-fashion .slide[data-label="Storyboard"][data-offset="-1"]{transform:translate(calc(-50% - 34%),-50%) scale(.82)}
+.project-fashion .slide[data-label="Storyboard"][data-offset="1"]{transform:translate(calc(-50% + 34%),-50%) scale(.82)}
+.project-fashion .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 26%),-50%) scale(.82)}
+.project-fashion .slide[data-label="Video"][data-offset="1"]{transform:translate(calc(-50% + 26%),-50%) scale(.82)}
 .video-frame{position:relative;width:100%;height:100%;display:grid;place-items:center;background:transparent}
 .project-fashion .video-frame{background:transparent}
 .video-frame .portfolio-video{position:absolute;inset:0}
@@ -74,6 +78,10 @@
   .project-fashion .slide{height:100%;max-width:82%}
   .project-fashion .slide[data-label="Storyboard"]{width:70%;height:auto;aspect-ratio:3 / 2}
   .project-fashion .slide[data-label="Video"]{width:94%;height:100%;aspect-ratio:auto}
+  .project-fashion .slide[data-label="Storyboard"][data-offset="-1"]{transform:translate(calc(-50% - 47%),-50%) scale(.8)}
+  .project-fashion .slide[data-label="Storyboard"][data-offset="1"]{transform:translate(calc(-50% + 47%),-50%) scale(.8)}
+  .project-fashion .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 32%),-50%) scale(.8)}
+  .project-fashion .slide[data-label="Video"][data-offset="1"]{transform:translate(calc(-50% + 32%),-50%) scale(.8)}
   .carousel-arrow{width:38px;height:38px}
   .carousel-arrow svg{width:17px;height:17px}
   .carousel-arrow.prev{left:1%}.carousel-arrow.next{right:1%}
