@@ -76,7 +76,7 @@ document.querySelectorAll('.project').forEach(project=>{
   const id=project.dataset.project, carousel=project.querySelector('.carousel'),track=project.querySelector('.carousel-track'),progress=project.querySelector('.progress');
   const slides=projectData[id];let active=0;const slideElements=[];
   slides.forEach(([label,kind,bg],index)=>{
-    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);slide.append(makeMedia(label,kind,bg,`${id}|${label}`));track.append(slide);slideElements.push(slide);
+    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);const media=makeMedia(label,kind,bg,`${id}|${label}`);slide.append(media);track.append(slide);if(id==='fashion'&&media instanceof HTMLImageElement){const setRatio=()=>{if(media.naturalWidth&&media.naturalHeight)slide.style.aspectRatio=`${media.naturalWidth} / ${media.naturalHeight}`};if(media.complete)setRatio();else media.addEventListener('load',setRatio,{once:true})}slideElements.push(slide);
     const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Go to slide ${index+1}: ${label}`);dot.innerHTML='<span></span>';dot.addEventListener('click',()=>show(index));progress.append(dot);
   });
   const dots=[...progress.querySelectorAll('button')];
