@@ -55,6 +55,10 @@
 .project-jewelry .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 32%),-50%) scale(.55)}
 .project-jewelry .slide[data-label="Video"][data-offset="1"]{transform:translate(calc(-50% + 108%),-50%) scale(.55)}
 .project-jewelry .slide[data-label="Video"][data-offset="1"]{left:calc(100% - 300px);transform:translate(-50%,-50%) scale(.55)}
+.project-fashion .carousel-footer{display:flex;justify-content:center;margin-top:12px}
+.project-fashion .carousel-footer .progress{width:min(340px,82vw);gap:6px}
+.project-fashion .progress button span{width:14px;height:3px;background:rgba(32,32,31,.42)}
+.project-fashion .progress button[aria-current=true] span{width:28px;background:var(--wine)}
 .video-frame{position:relative;width:100%;height:100%;display:grid;place-items:center;background:transparent}
 .project-fashion .video-frame{background:transparent}
 .video-frame .portfolio-video{position:absolute;inset:0}
@@ -99,6 +103,10 @@
   .project-jewelry .slide[data-offset="1"]{transform:translate(calc(-50% + 138%),-50%) scale(.8)}
   .project-jewelry .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 72%),-50%) scale(.55)}
   .project-jewelry .slide[data-label="Video"][data-offset="1"]{left:calc(50% + 82px);transform:translate(-50%,-50%) scale(.55)}
+  .project-fashion .carousel-footer{margin-top:10px}
+  .project-fashion .carousel-footer .progress{width:min(340px,88vw);gap:5px}
+  .project-fashion .progress button span{width:11px;height:3px}
+  .project-fashion .progress button[aria-current=true] span{width:22px}
   .carousel-arrow{width:38px;height:38px}
   .carousel-arrow svg{width:17px;height:17px}
   .carousel-arrow.prev{left:1%}.carousel-arrow.next{right:1%}
