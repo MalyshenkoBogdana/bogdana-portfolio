@@ -31,12 +31,22 @@ const mediaManifest = {
   'fragrance|Photo 04': 'assets/fragrance/05-photo-04.jpeg',
   'fragrance|Photo 05': 'assets/fragrance/06-photo-05.png',
   'fragrance|Photo 06': 'assets/fragrance/07-photo-06.png',
-  'fragrance|Video 01': 'assets/fragrance/08-video-01.mp4'
+  'fragrance|Video 01': 'assets/fragrance/08-video-01.mp4',
+  'gallery:beauty|PINK LIQUID — CANDY POP BEAUTY': 'assets/explorations/beauty-candy-pop.png',
+  'gallery:beauty|CARAMEL BONBONS': 'assets/explorations/beauty-caramel-perfume.mp4',
+  'gallery:beauty|DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY': 'assets/explorations/beauty-dior-lip-glow-oil.png',
+  'gallery:fashion|THE WIND DRESS': 'assets/explorations/fashion-wind-dress.mp4',
+  'gallery:fashion|THE IMPOSSIBLE BAG — DIOR LADY D-LITE': 'assets/explorations/fashion-dior-bag.jpeg',
+  'gallery:fashion|GLITTER MAKEUP': 'assets/explorations/fashion-glitter-makeup.png',
+  'gallery:surreal|GIANT STRAWBERRY CAKE': 'assets/explorations/surreal-strawberry-cake.png',
+  'gallery:surreal|MANGO PASSION COCKTAIL': 'assets/explorations/surreal-mango-cocktail.png',
+  'gallery:surreal|LEMON HOTEL': 'assets/explorations/surreal-lemon-hotel.png',
+  'gallery:surreal|BABY DRAGON PIZZA CHEF': 'assets/explorations/surreal-dragon-chef.mp4'
 };
 const explorationData = [
-  {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
-  {id:'fashion',title:'FASHION & OBJECTS',description:{uk:'Візуали, натхненні модою, виразні об’єкти та експериментальна естетика.',en:'Fashion-inspired visuals, statement objects and experimental aesthetics.'},layout:'fashion',items:[['THE WIND DRESS','VIDEO'],['GLITTER SKIN','IMAGE'],['THE IMPOSSIBLE BAG — DIOR LADY D-LITE','IMAGE']]},
-  {id:'surreal',title:'SURREAL & PLAYFUL',description:{uk:'Уявні світи, сюрреалістичні концепції та несподівані візуальні історії.',en:'Imaginative worlds, surreal concepts and unexpected visual storytelling.'},layout:'surreal',items:[['BABY DRAGON PIZZA CHEF','VIDEO'],['GIANT STRAWBERRY CAKE','IMAGE'],['LEMON HOTEL','IMAGE'],['MANGO PASSION COCKTAIL','IMAGE']]}
+  {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO'],['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE']]},
+  {id:'fashion',title:'FASHION & OBJECTS',description:{uk:'Візуали, натхненні модою, виразні об’єкти та експериментальна естетика.',en:'Fashion-inspired visuals, statement objects and experimental aesthetics.'},layout:'fashion',items:[['THE WIND DRESS','VIDEO'],['THE IMPOSSIBLE BAG — DIOR LADY D-LITE','IMAGE'],['GLITTER MAKEUP','IMAGE']]},
+  {id:'surreal',title:'SURREAL & PLAYFUL',description:{uk:'Уявні світи, сюрреалістичні концепції та несподівані візуальні історії.',en:'Imaginative worlds, surreal concepts and unexpected visual storytelling.'},layout:'surreal',items:[['GIANT STRAWBERRY CAKE','IMAGE'],['MANGO PASSION COCKTAIL','IMAGE'],['LEMON HOTEL','IMAGE'],['BABY DRAGON PIZZA CHEF','VIDEO']]}
 ];
 let currentLanguage='uk';
 const langButtons=[...document.querySelectorAll('[data-lang]')];
