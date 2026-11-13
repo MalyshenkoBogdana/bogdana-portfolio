@@ -581,3 +581,23 @@
   #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4){grid-column:5 / span 8;grid-row:4;aspect-ratio:.9 / 1;margin-top:10px}
 }
 
+/* Tighter pacing for Creative Explorations, while keeping the artworks generous. */
+#creative-explorations.explorations{padding-top:clamp(22px,2.6vw,38px);padding-bottom:clamp(52px,6vw,82px)}
+#creative-explorations .explore-intro{margin-bottom:clamp(34px,4.2vw,54px)}
+#creative-explorations #exploration-groups .explore-group{margin-bottom:clamp(48px,5.2vw,68px)}
+#creative-explorations #exploration-groups .explore-group:last-child{margin-bottom:0}
+#creative-explorations .group-head{margin-bottom:clamp(20px,2.5vw,30px)}
+#creative-explorations .work-grid{row-gap:clamp(18px,2.1vw,28px)}
+#creative-explorations .work-grid[data-layout="beauty"]{min-height:clamp(390px,40vw,540px)}
+#creative-explorations .work-grid[data-layout="fashion"]{min-height:clamp(420px,43vw,570px)}
+#creative-explorations .work-grid[data-layout="surreal"]{min-height:clamp(520px,54vw,700px)}
+#creative-explorations .explore-group:not(:last-child)::after{bottom:calc(clamp(48px,5.2vw,68px) / -2)}
+@media(max-width:700px){
+  #creative-explorations.explorations{padding-top:22px;padding-bottom:50px}
+  #creative-explorations .explore-intro{margin-bottom:34px}
+  #creative-explorations #exploration-groups .explore-group{margin-bottom:46px}
+  #creative-explorations .group-head{margin-bottom:20px}
+  #creative-explorations .work-grid{row-gap:19px}
+  #creative-explorations .explore-group:not(:last-child)::after{bottom:-25px!important}
+}
+
