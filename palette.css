@@ -382,6 +382,7 @@
 .brand{position:relative}
 .brand::after{content:"";position:absolute;left:2%;right:4%;bottom:-5px;height:2px;background:rgba(243,165,184,.6);transform:rotate(-1deg);border-radius:50%}
 .language button[aria-pressed="true"],.language button:hover{color:#b8a17c}
+.language button[aria-pressed="true"]{background:#b8a17c;color:#fff;text-decoration:none;border-radius:2px;padding-inline:9px}
 .language>span{color:rgba(184,161,124,.7)}
 .contact h2 i{color:#c6aec9}
 #selected-projects .carousel-footer .progress{width:min(290px,72vw);gap:5px}
