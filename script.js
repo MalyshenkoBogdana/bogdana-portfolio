@@ -95,7 +95,13 @@ function makeMedia(title,kind,bg,key){
     toggle.innerHTML='<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.5h3v13h-3zm6 0h3v13h-3z"/></svg>';
     const updateToggle=()=>{frame.classList.toggle('is-playing',!video.paused);toggle.setAttribute('aria-label',video.paused?(currentLanguage==='uk'?'Відтворити відео':'Play video'):(currentLanguage==='uk'?'Призупинити відео':'Pause video'))};
     frame.addEventListener('click',event=>{if(!event.target.closest('.video-toggle'))openVideo(video)});
-    video.addEventListener('loadedmetadata',()=>{if(video.paused)video.currentTime=Math.max(video.duration-.06,0)});
+    video.addEventListener('loadedmetadata',()=>{
+      if(key.startsWith('gallery:')&&video.videoWidth&&video.videoHeight){
+        const work=frame.closest('.work-item');
+        work?.style.setProperty('--media-ratio',`${video.videoWidth} / ${video.videoHeight}`)
+      }
+      if(video.paused)video.currentTime=Math.max(video.duration-.06,0)
+    });
     video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()});updateToggle()});
     video.addEventListener('pause',updateToggle);
     video.addEventListener('ended',()=>{video.currentTime=Math.max(video.duration-.06,0);updateToggle()});

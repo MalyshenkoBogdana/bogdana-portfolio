@@ -639,3 +639,110 @@
   }
 }
 
+/* Second refinement: break up the repeated mat treatment and let portrait videos breathe. */
+#creative-explorations .work-grid .work-item.video-work{
+  aspect-ratio:var(--media-ratio,.66 / 1);background:transparent;filter:none
+}
+#creative-explorations .work-grid .work-item.video-work::before{inset:0;background:transparent;clip-path:none;opacity:0}
+#creative-explorations .work-grid .work-item.video-work .video-frame{background:transparent;overflow:visible}
+#creative-explorations .work-grid .work-item.video-work .portfolio-video{object-fit:contain}
+
+/* Beauty: free pink image, prominent print-framed Dior, portrait video centered below. */
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1){
+  background:transparent;filter:none;transform:rotate(-1.8deg);z-index:2
+}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1)::before{
+  inset:-11% -9%;background:rgba(237,133,170,.52);border-radius:58% 42% 51% 49% / 42% 54% 46% 58%;
+  clip-path:none;transform:rotate(-12deg);opacity:.74
+}
+#creative-explorations .work-grid[data-layout="beauty"]{background-image:radial-gradient(circle at 94% 88%,rgba(243,165,184,.22) 0 10%,transparent 10.3%)}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1)::after{
+  content:"";position:absolute;z-index:0;left:-13%;bottom:1%;width:31%;height:11px;
+  background:rgba(241,111,88,.75);clip-path:polygon(0 54%,18% 23%,38% 39%,61% 7%,80% 26%,100% 0,95% 69%,71% 89%,48% 67%,24% 100%,5% 78%);transform:rotate(-8deg)
+}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1) .portfolio-image{background:transparent}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){
+  grid-column:5 / span 3;grid-row:2;margin-top:-152px;z-index:4
+}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(3){
+  padding:8px;background:#f7f3ed;outline:1px solid rgba(184,95,96,.34);outline-offset:5px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.88),0 0 0 7px rgba(242,230,74,.34);z-index:2
+}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(3)::before{
+  inset:-13px;background:#f0b3a2;clip-path:polygon(4% 1%,96% 0,100% 94%,0 100%);transform:rotate(1.2deg)
+}
+
+/* Fashion: portrait video leads; object and beauty portrait keep their own framing. */
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(1){
+  grid-column:1 / span 4;grid-row:1;aspect-ratio:var(--media-ratio,.66 / 1);z-index:3;
+  background:transparent;filter:none
+}
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(1)::before{
+  inset:-5% -11%;background:linear-gradient(145deg,rgba(40,85,245,.9),rgba(40,85,245,.22));
+  clip-path:polygon(11% 0,100% 8%,88% 100%,0 91%);transform:rotate(-5deg);opacity:.82
+}
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(2){
+  grid-column:8 / span 5;grid-row:1;aspect-ratio:1.14 / 1;margin-top:55px;z-index:2;
+  --matte:#d9ef55;--matte-turn:2.2deg
+}
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+  grid-column:5 / span 4;grid-row:2;aspect-ratio:.8 / 1;margin-top:-116px;z-index:4;
+  background:transparent;filter:drop-shadow(0 12px 22px rgba(32,32,31,.14));
+  box-shadow:0 0 0 1px rgba(248,245,239,.92),0 0 0 6px rgba(243,165,184,.44)
+}
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(3)::before{
+  inset:-8px;background:transparent;border:1px solid rgba(40,85,245,.5);clip-path:none;transform:rotate(2deg);opacity:1
+}
+
+/* Surreal: widen Lemon Hotel and place the dragon as a tall lower-right accent. */
+#creative-explorations .work-grid[data-layout="surreal"]{
+  background-image:radial-gradient(circle at 6% 32%,rgba(241,111,88,.72) 0 2px,transparent 3px),
+    radial-gradient(circle at 91% 14%,rgba(217,239,85,.9) 0 2.5px,transparent 4px),
+    radial-gradient(circle at 62% 88%,rgba(37,185,176,.72) 0 2px,transparent 3px)
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(1){
+  grid-column:1 / span 5;grid-row:1;aspect-ratio:.82 / 1;z-index:2;--matte:#f3a5b8;--matte-turn:-1.8deg
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+  grid-column:8 / span 4;grid-row:1;aspect-ratio:.9 / 1;margin-top:0;z-index:3;
+  background:transparent;filter:none
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{
+  inset:-10%;background:rgba(37,185,176,.38);border-radius:56% 44% 61% 39% / 47% 58% 42% 53%;
+  clip-path:none;transform:rotate(13deg);opacity:.76
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2) .portfolio-image{background:transparent}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2)::after{
+  content:"✳";position:absolute;z-index:3;right:-18%;top:3%;color:#d9ef55;font:clamp(23px,2.4vw,34px)/1 var(--sans);
+  transform:rotate(11deg);text-shadow:0 2px 0 rgba(32,32,31,.08)
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+  grid-column:2 / span 6;grid-row:2;aspect-ratio:1.22 / 1;margin-top:-74px;z-index:4;
+  padding:6px;background:#f7f3ed;outline:1px solid rgba(89,100,91,.54);outline-offset:4px
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{
+  inset:-11px;background:rgba(242,230,74,.6);clip-path:polygon(3% 7%,96% 0,100% 89%,0 100%);transform:rotate(-1.4deg)
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+  grid-column:9 / span 3;grid-row:2;aspect-ratio:var(--media-ratio,.66 / 1);margin-top:6px;z-index:3;
+  background:transparent;filter:none
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4)::before{
+  inset:-8% -12%;background:rgba(217,239,85,.56);border-radius:46% 54% 42% 58% / 53% 42% 58% 47%;
+  clip-path:none;transform:rotate(8deg);opacity:.7
+}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4) .video-frame{background:transparent}
+
+@media(max-width:700px){
+  #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){grid-column:3 / span 8;grid-row:3;aspect-ratio:var(--media-ratio,.66 / 1);margin-top:4px}
+  #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(3){grid-column:5 / span 8;grid-row:2}
+  #creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(1){grid-column:1 / span 8;grid-row:1;aspect-ratio:var(--media-ratio,.66 / 1);margin-top:0}
+  #creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(2){grid-column:5 / span 8;grid-row:2;margin-top:10px}
+  #creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(3){grid-column:1 / span 8;grid-row:3;margin-top:10px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(1){grid-column:1 / span 9;grid-row:1}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2){grid-column:5 / span 8;grid-row:2;margin-top:10px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(3){grid-column:1 / span 8;grid-row:3;aspect-ratio:1.08 / 1;margin-top:8px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4){grid-column:5 / span 8;grid-row:4;aspect-ratio:var(--media-ratio,.66 / 1);margin-top:8px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2)::after{right:-11%;font-size:22px}
+}
+
