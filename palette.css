@@ -662,7 +662,7 @@
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1) .portfolio-image{background:transparent}
 #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){
-  grid-column:5 / span 3;grid-row:2;margin-top:-152px;z-index:4
+  grid-column:5 / span 3;grid-row:2;aspect-ratio:var(--media-ratio,.66 / 1);margin-top:-210px;z-index:4
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(3){
   padding:8px;background:#f7f3ed;outline:1px solid rgba(184,95,96,.34);outline-offset:5px;
