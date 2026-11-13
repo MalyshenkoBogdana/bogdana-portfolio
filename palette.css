@@ -562,3 +562,22 @@
   #creative-explorations .explore-group::before{transition:none!important}
 }
 
+/* Give the smallest gallery works more room without changing their media. */
+#creative-explorations #exploration-groups{max-width:1220px}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1){grid-column:1 / span 5}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){grid-column:4 / span 5;aspect-ratio:1.04 / 1}
+#creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(3){grid-column:5 / span 5;aspect-ratio:.78 / 1;margin-top:12px}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2){grid-column:7 / span 5;aspect-ratio:.82 / 1}
+#creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4){grid-column:7 / span 5;aspect-ratio:.88 / 1;margin-top:-18px}
+@media(max-width:700px){
+  #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1){grid-column:1 / span 8;grid-row:1;aspect-ratio:.82 / 1;margin-top:12px}
+  #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(3){grid-column:5 / span 8;grid-row:2;aspect-ratio:.78 / 1;margin-top:8px}
+  #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){grid-column:1 / span 9;grid-row:3;aspect-ratio:1.04 / 1;margin-top:6px}
+  #creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(2){grid-column:5 / span 8;grid-row:2;aspect-ratio:1.14 / 1;margin-top:12px}
+  #creative-explorations .work-grid[data-layout="fashion"] .work-item:nth-child(3){grid-column:1 / span 8;grid-row:3;aspect-ratio:.86 / 1;margin-top:10px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(1){grid-column:1 / span 9;grid-row:1;aspect-ratio:.86 / 1;margin-top:8px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(2){grid-column:5 / span 8;grid-row:2;aspect-ratio:.82 / 1;margin-top:10px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(3){grid-column:1 / span 8;grid-row:3;aspect-ratio:.82 / 1;margin-top:8px}
+  #creative-explorations .work-grid[data-layout="surreal"] .work-item:nth-child(4){grid-column:5 / span 8;grid-row:4;aspect-ratio:.9 / 1;margin-top:10px}
+}
+
