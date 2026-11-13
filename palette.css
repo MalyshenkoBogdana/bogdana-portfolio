@@ -318,3 +318,42 @@
 .project-fragrance .carousel{height:clamp(380px,36vw,500px);isolation:isolate;overflow:hidden}
 .project-fragrance .carousel::before{width:112%;height:88%;left:-6%;top:6%;border-radius:48% 52% 60% 40% / 42% 47% 53% 58%;background:radial-gradient(ellipse 58% 53% at 49% 51%,rgba(89,100,91,.22),transparent 82%),radial-gradient(ellipse 72% 43% at 54% 45%,rgba(225,226,216,.94),transparent 78%),radial-gradient(ellipse 46% 29% at 35% 61%,rgba(197,112,126,.12),transparent 82%);filter:blur(8px);transform:rotate(-6deg)}
 @media(max-width:700px){.project-fragrance .carousel{height:clamp(310px,82vw,400px)}.project-fragrance .carousel::before{width:108%;height:88%;left:-4%;top:6%;transform:rotate(-5deg)}}
+
+/* Requested interaction and spacing refinements. */
+.lightbox-image[hidden],.lightbox-video[hidden]{display:none}
+.lightbox-video{display:block;width:min(90vw,1280px);max-height:88dvh;height:auto;object-fit:contain;background:#111}
+.project .carousel-footer{position:relative;z-index:6}
+.project-jewelry .slide[data-offset="-1"]{left:50%;right:auto;transform:translate(calc(-50% - 118%),-50%) scale(.82)}
+.project-jewelry .slide[data-offset="1"]{left:50%;right:auto;transform:translate(calc(-50% + 118%),-50%) scale(.82)}
+.project-jewelry .slide[data-label="Video"][data-offset="-1"]{left:50%;transform:translate(calc(-50% - 118%),-50%) scale(.82)}
+.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:50%;transform:translate(calc(-50% + 118%),-50%) scale(.82)}
+.project-jewelry .project-meta h3::after{background:rgba(211,210,204,.96)}
+.site-footer .brand-role{color:var(--pink)}
+.contact h2 i{color:var(--coral)}
+.language button[aria-pressed="true"]{color:var(--moss)}
+.language button:hover{color:var(--moss)}
+#selected-projects{padding-bottom:38px}
+#creative-explorations.explorations{padding-top:18px;padding-bottom:64px}
+#exploration-groups .explore-group{margin-bottom:clamp(46px,6vw,74px)}
+#exploration-groups .explore-group:last-child{margin-bottom:0}
+#exploration-groups .group-head::after{content:none!important;display:none}
+.explore-intro::after{font:10px var(--mono);font-style:normal;letter-spacing:.08em;text-transform:none}
+.project-fragrance .carousel{height:clamp(380px,36vw,500px);overflow:hidden}
+.project-fragrance .carousel::before{width:108%;height:86%;left:-4%;top:7%;border-radius:42% 58% 64% 36% / 43% 39% 61% 57%;background:radial-gradient(ellipse 64% 52% at 48% 52%,rgba(89,100,91,.25),transparent 82%),radial-gradient(ellipse 72% 40% at 58% 44%,rgba(225,226,216,.92),transparent 78%),radial-gradient(ellipse 48% 28% at 33% 60%,rgba(197,112,126,.16),transparent 82%);filter:blur(3px);transform:rotate(5deg)}
+@media(max-width:700px){
+  .video-frame.is-playing .video-toggle{opacity:0;pointer-events:none}
+  .project-jewelry .slide[data-offset="-1"],.project-jewelry .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 112%),-50%) scale(.78)}
+  .project-jewelry .slide[data-offset="1"],.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:50%;transform:translate(calc(-50% + 112%),-50%) scale(.78)}
+  #exploration-groups .explore-group{margin-bottom:42px}
+  .project-fragrance .carousel{height:clamp(310px,82vw,400px)}
+  .project-fragrance .carousel::before{width:104%;height:86%;left:-2%;top:7%}
+}
+.project-jewelry .slide[data-offset="-1"]{left:28%;right:auto;transform:translate(-50%,-50%) scale(.82)}
+.project-jewelry .slide[data-offset="1"]{left:72%;right:auto;transform:translate(-50%,-50%) scale(.82)}
+.project-jewelry .slide[data-label="Video"][data-offset="-1"],.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:auto;right:auto;transform:translate(-50%,-50%) scale(.82)}
+.project-jewelry .slide[data-label="Video"][data-offset="-1"]{left:28%}
+.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:72%}
+@media(max-width:700px){
+  .project-jewelry .slide[data-offset="-1"],.project-jewelry .slide[data-label="Video"][data-offset="-1"]{left:25%;transform:translate(-50%,-50%) scale(.76)}
+  .project-jewelry .slide[data-offset="1"],.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:75%;transform:translate(-50%,-50%) scale(.76)}
+}

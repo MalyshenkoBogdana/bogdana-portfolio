@@ -54,7 +54,7 @@ function setLanguage(lang){
   currentLanguage=lang; document.documentElement.lang=lang;
   langButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
   document.querySelectorAll('[data-uk][data-en]').forEach(el=>{el.innerHTML=el.dataset[lang]});
-  document.querySelectorAll('.email-placeholder,.footer-email').forEach(el=>{el.textContent=lang==='uk'?'email — додайте адресу ↗':'email — add address ↗';el.setAttribute('aria-label',lang==='uk'?'Email — додайте адресу':'Email — add your address')});
+  document.querySelectorAll('.email-placeholder').forEach(el=>{el.textContent=`bogdasha.khudyakova@gmail.com ↗`;el.setAttribute('aria-label',lang==='uk'?'Написати на bogdasha.khudyakova@gmail.com':'Email bogdasha.khudyakova@gmail.com')});
   document.querySelectorAll('.carousel').forEach(el=>{el.setAttribute('aria-label',`${el.dataset.carousel} carousel`)});
   document.querySelectorAll('.carousel-arrow.prev').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Попередній слайд':'Previous slide'));
   document.querySelectorAll('.carousel-arrow.next').forEach(el=>el.setAttribute('aria-label',lang==='uk'?'Наступний слайд':'Next slide'));
@@ -65,14 +65,17 @@ function setLanguage(lang){
   document.querySelectorAll('.slide-label').forEach(el=>{el.textContent=el.closest('.project').querySelector('.slide.is-active')?.dataset.label||''});
 }
 langButtons.forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
-const lightbox=document.createElement('dialog');lightbox.className='media-lightbox';lightbox.setAttribute('aria-label','Image preview');
+const lightbox=document.createElement('dialog');lightbox.className='media-lightbox';lightbox.setAttribute('aria-label','Media preview');
 const lightboxClose=document.createElement('button');lightboxClose.type='button';lightboxClose.className='lightbox-close';lightboxClose.setAttribute('aria-label','Close image preview');lightboxClose.textContent='×';
-const lightboxImage=document.createElement('img');lightboxImage.className='lightbox-image';lightbox.append(lightboxClose,lightboxImage);document.body.append(lightbox);
+const lightboxImage=document.createElement('img');lightboxImage.className='lightbox-image';
+const lightboxVideo=document.createElement('video');lightboxVideo.className='lightbox-video';lightboxVideo.controls=true;lightboxVideo.playsInline=true;lightboxVideo.preload='metadata';lightboxVideo.hidden=true;
+lightbox.append(lightboxClose,lightboxImage,lightboxVideo);document.body.append(lightbox);
 let lightboxTrigger=null;
-function openImage(image){lightboxTrigger=image;lightboxImage.src=image.currentSrc||image.src;lightboxImage.alt=image.alt;lightbox.showModal()}
+function openImage(image){lightboxTrigger=image;lightboxVideo.pause();lightboxVideo.removeAttribute('src');lightboxVideo.load();lightboxVideo.hidden=true;lightboxImage.hidden=false;lightboxImage.src=image.currentSrc||image.src;lightboxImage.alt=image.alt;lightbox.showModal()}
+function openVideo(video){lightboxTrigger=video;lightboxImage.hidden=true;lightboxVideo.hidden=false;lightboxVideo.src=video.currentSrc||video.querySelector('source')?.src||'';lightboxVideo.poster=video.poster||'';lightbox.showModal();lightboxVideo.play().catch(()=>{})}
 lightboxClose.addEventListener('click',()=>lightbox.close());
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});
-lightbox.addEventListener('close',()=>{lightboxImage.removeAttribute('src');lightboxTrigger?.focus();lightboxTrigger=null});
+lightbox.addEventListener('close',()=>{lightboxImage.removeAttribute('src');lightboxVideo.pause();lightboxVideo.removeAttribute('src');lightboxVideo.load();lightboxTrigger?.focus();lightboxTrigger=null});
 function makePlaceholder(title,kind,bg){
   const box=document.createElement('div');box.className='asset-placeholder';box.style.setProperty('--slot',bg);
   const copy=document.createElement('div');copy.className='placeholder-copy';
@@ -91,6 +94,7 @@ function makeMedia(title,kind,bg,key){
     const toggle=document.createElement('button');toggle.type='button';toggle.className='video-toggle';toggle.dataset.videoToggle='';toggle.setAttribute('aria-label',currentLanguage==='uk'?'Відтворити відео':'Play video');
     toggle.innerHTML='<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 5.5h3v13h-3zm6 0h3v13h-3z"/></svg>';
     const updateToggle=()=>{frame.classList.toggle('is-playing',!video.paused);toggle.setAttribute('aria-label',video.paused?(currentLanguage==='uk'?'Відтворити відео':'Play video'):(currentLanguage==='uk'?'Призупинити відео':'Pause video'))};
+    frame.addEventListener('click',event=>{if(!event.target.closest('.video-toggle'))openVideo(video)});
     video.addEventListener('loadedmetadata',()=>{if(video.paused)video.currentTime=Math.max(video.duration-.06,0)});
     video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()});updateToggle()});
     video.addEventListener('pause',updateToggle);
@@ -98,14 +102,14 @@ function makeMedia(title,kind,bg,key){
     toggle.addEventListener('click',()=>{if(video.paused){if(video.currentTime>=video.duration-.2)video.currentTime=0;video.play().catch(()=>updateToggle())}else video.pause()});
     frame.append(video,toggle);return frame;
   }
-  const image=document.createElement('img');image.className='portfolio-image';image.src=source;image.alt=title;image.loading=key==='fashion|HERO / Model + Outfit'?'eager':'lazy';image.fetchPriority=key==='fashion|HERO / Model + Outfit'?'high':'auto';image.decoding='async';image.tabIndex=0;image.setAttribute('role','button');image.setAttribute('aria-label',`${title} — open full-size image`);image.addEventListener('click',()=>openImage(image));image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openImage(image)}});return image;
+  const image=document.createElement('img');image.className='portfolio-image';image.src=source;image.alt=title;image.loading=key==='fashion|HERO / Model + Outfit'?'eager':'lazy';image.fetchPriority=key==='fashion|HERO / Model + Outfit'?'high':'auto';image.decoding='async';image.tabIndex=0;image.setAttribute('role','button');image.setAttribute('aria-label',`${title} — open full-size image`);image.addEventListener('click',()=>openImage(image));image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();const slide=image.closest('.slide');if(slide&&!slide.classList.contains('is-active'))slide.click();else openImage(image)}});return image;
 }
 const carousels=[];
 document.querySelectorAll('.project').forEach(project=>{
   const id=project.dataset.project, carousel=project.querySelector('.carousel'),track=project.querySelector('.carousel-track'),progress=project.querySelector('.progress');
   const slides=projectData[id];let active=0;const slideElements=[];
   slides.forEach(([label,kind,bg],index)=>{
-    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);const media=makeMedia(label,kind,bg,`${id}|${label}`);slide.append(media);track.append(slide);if((id==='fashion'||id==='jewelry')&&media instanceof HTMLImageElement){const setRatio=()=>{if(media.naturalWidth&&media.naturalHeight)slide.style.aspectRatio=`${media.naturalWidth} / ${media.naturalHeight}`};if(media.complete)setRatio();else media.addEventListener('load',setRatio,{once:true})}slideElements.push(slide);
+    const slide=document.createElement('div');slide.className='slide';slide.dataset.label=label;slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${index+1} of ${slides.length}: ${label}`);const media=makeMedia(label,kind,bg,`${id}|${label}`);slide.append(media);slide.addEventListener('click',event=>{if(index!==active){event.preventDefault();event.stopImmediatePropagation();show(index)}},true);track.append(slide);if((id==='fashion'||id==='jewelry')&&media instanceof HTMLImageElement){const setRatio=()=>{if(media.naturalWidth&&media.naturalHeight)slide.style.aspectRatio=`${media.naturalWidth} / ${media.naturalHeight}`};if(media.complete)setRatio();else media.addEventListener('load',setRatio,{once:true})}slideElements.push(slide);
     const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Go to slide ${index+1}: ${label}`);dot.innerHTML='<span></span>';dot.addEventListener('click',()=>show(index));progress.append(dot);
   });
   const dots=[...progress.querySelectorAll('button')];
