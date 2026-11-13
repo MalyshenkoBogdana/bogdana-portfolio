@@ -400,13 +400,21 @@
 .project-jewelry .project-meta h3::after{
   height:.34em;bottom:.01em;left:-.08em;right:-.12em;opacity:.96;
   clip-path:polygon(0 49%,5% 26%,17% 38%,28% 21%,42% 34%,54% 14%,68% 31%,81% 20%,94% 33%,100% 25%,97% 68%,84% 78%,70% 65%,56% 88%,42% 69%,28% 85%,14% 68%,3% 77%);
-  background-color:#c8c9c7;
+  background-color:#b9b8b7;
   background-image:
-    radial-gradient(circle at 15% 45%,rgba(255,255,255,.95) 0 1px,transparent 1.7px),
-    radial-gradient(circle at 68% 54%,rgba(255,255,255,.8) 0 .8px,transparent 1.5px),
-    linear-gradient(100deg,#8b8f91 0%,#f5f5f2 13%,#aeb1b3 27%,#fff 40%,#9a9ea0 53%,#ececea 67%,#a1a5a6 82%,#f8f8f6 100%);
-  background-size:29px 12px,37px 12px,100% 100%;
-  box-shadow:0 1px 4px rgba(170,174,175,.28)
+    radial-gradient(circle at 3% 42%,rgba(255,255,255,.98) 0 1.1px,transparent 2.4px),
+    radial-gradient(circle at 12% 72%,rgba(95,97,100,.75) 0 .8px,transparent 2px),
+    radial-gradient(circle at 22% 28%,rgba(245,242,239,.95) 0 1.5px,transparent 3px),
+    radial-gradient(circle at 31% 66%,rgba(112,108,109,.7) 0 1px,transparent 2.6px),
+    radial-gradient(circle at 42% 38%,rgba(255,255,255,.98) 0 1.2px,transparent 2.8px),
+    radial-gradient(circle at 52% 76%,rgba(139,132,134,.76) 0 1px,transparent 2.4px),
+    radial-gradient(circle at 62% 25%,rgba(255,255,255,.98) 0 1.4px,transparent 3px),
+    radial-gradient(circle at 72% 62%,rgba(102,104,108,.72) 0 .9px,transparent 2.3px),
+    radial-gradient(circle at 83% 35%,rgba(247,245,243,.98) 0 1.3px,transparent 2.8px),
+    radial-gradient(circle at 94% 69%,rgba(121,117,119,.72) 0 1px,transparent 2.5px),
+    linear-gradient(105deg,#898b8d 0%,#efeeec 12%,#b1b0b1 24%,#f8f7f5 37%,#929395 49%,#e7e6e4 62%,#aaa8a9 76%,#f6f5f3 89%,#96989a 100%);
+  background-size:100% 100%;
+  box-shadow:0 1px 5px rgba(137,137,139,.38)
 }
 .contact h2 i{color:#c9ad83}
 
