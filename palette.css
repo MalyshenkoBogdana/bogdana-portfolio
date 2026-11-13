@@ -359,3 +359,39 @@
   .project-jewelry .slide[data-offset="-1"],.project-jewelry .slide[data-label="Video"][data-offset="-1"]{left:25%;transform:translate(-50%,-50%) scale(.76)}
   .project-jewelry .slide[data-offset="1"],.project-jewelry .slide[data-label="Video"][data-offset="1"]{left:75%;transform:translate(-50%,-50%) scale(.76)}
 }
+
+/* Refined jewelry accent, calmer language switcher and lighter carousel progress. */
+.project-jewelry .project-meta h3::after{
+  background-color:#c8c9c7;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.95) 0 1px,transparent 1.6px),
+    radial-gradient(circle,rgba(105,108,110,.55) 0 .7px,transparent 1.5px),
+    linear-gradient(105deg,#85898c 0%,#f7f7f4 18%,#b9bbbc 31%,#fff 43%,#9da1a3 56%,#e8e9e7 70%,#a4a7a8 85%,#f8f8f6 100%);
+  background-size:11px 9px,13px 11px,100% 100%;
+  box-shadow:0 1px 5px rgba(178,181,182,.32);
+}
+.project-jewelry .slide[data-offset="-1"],
+.project-jewelry .slide[data-label="Video"][data-offset="-1"]{
+  left:50%;right:auto;transform:translate(calc(-50% - 72%),-50%) scale(.76);z-index:1
+}
+.project-jewelry .slide[data-offset="1"],
+.project-jewelry .slide[data-label="Video"][data-offset="1"]{
+  left:50%;right:auto;transform:translate(calc(-50% + 72%),-50%) scale(.76);z-index:1
+}
+.project-jewelry .slide.is-active{z-index:2}
+.brand{position:relative}
+.brand::after{content:"";position:absolute;left:2%;right:4%;bottom:-5px;height:2px;background:rgba(243,165,184,.6);transform:rotate(-1deg);border-radius:50%}
+.language button[aria-pressed="true"],.language button:hover{color:#b8a17c}
+.language>span{color:rgba(184,161,124,.7)}
+.contact h2 i{color:#c6aec9}
+#selected-projects .carousel-footer .progress{width:min(290px,72vw);gap:5px}
+#selected-projects .progress button{padding:5px 0}
+#selected-projects .progress button span{height:2px}
+#selected-projects .progress button[aria-current="true"] span{height:3px}
+@media(max-width:700px){
+  .project-jewelry .slide[data-offset="-1"],.project-jewelry .slide[data-label="Video"][data-offset="-1"]{transform:translate(calc(-50% - 68%),-50%) scale(.72)}
+  .project-jewelry .slide[data-offset="1"],.project-jewelry .slide[data-label="Video"][data-offset="1"]{transform:translate(calc(-50% + 68%),-50%) scale(.72)}
+  #selected-projects .carousel-footer .progress{width:min(270px,78vw);gap:4px}
+  #selected-projects .progress button span{height:2px}
+  #selected-projects .progress button[aria-current="true"] span{height:2.5px}
+}
