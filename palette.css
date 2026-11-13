@@ -307,6 +307,8 @@
 #exploration-groups .work-grid[data-layout="surreal"]::before{width:80px;height:13px;background:rgba(217,239,85,.72);clip-path:polygon(0 30%,20% 12%,44% 26%,66% 0,100% 18%,94% 66%,69% 83%,43% 64%,19% 100%,4% 72%);transform:rotate(-10deg);opacity:.72}
 #exploration-groups .work-grid[data-layout="surreal"]::after{right:4%;bottom:9%;width:70px;height:10px;border:0;border-radius:0;background:rgba(241,111,88,.48);clip-path:polygon(0 35%,26% 12%,50% 25%,75% 0,100% 19%,95% 67%,69% 85%,44% 66%,20% 100%,5% 72%);transform:rotate(7deg)}
 #exploration-groups .explore-group:nth-child(2)::after{left:23%;width:66px;height:8px;border:0;border-radius:0;background:rgba(40,85,245,.42);clip-path:polygon(0 32%,24% 10%,50% 30%,76% 0,100% 19%,93% 72%,68% 84%,44% 68%,20% 100%,5% 74%);transform:rotate(-7deg);opacity:.72}
+#exploration-groups .work-item .video-frame{overflow:hidden}
+#exploration-groups .work-item .portfolio-video{position:absolute;inset:0;min-width:0;min-height:0;width:100%;height:100%;object-fit:contain;background:transparent}
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){.hero-title-wrap::after{opacity:.8}}
 @media(max-width:700px){
   .hero-title-wrap::after{left:26%;top:54%;width:138px;height:9px}
