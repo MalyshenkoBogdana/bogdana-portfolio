@@ -409,3 +409,78 @@
   box-shadow:0 1px 4px rgba(170,174,175,.28)
 }
 .contact h2 i{color:#c9ad83}
+
+/* Selected Projects: three distinct editorial spreads and quiet transitions. */
+#selected-projects .project{position:relative;isolation:isolate}
+
+/* Fashion opens the sequence with the largest, right-weighted image stage. */
+#selected-projects .project-fashion{
+  width:min(1260px,82vw);max-width:none;margin-right:0;margin-left:auto;
+  margin-bottom:clamp(130px,12vw,180px)
+}
+#selected-projects .project-fashion .project-meta{max-width:1080px;margin-left:auto;margin-bottom:clamp(24px,3vw,42px);gap:clamp(28px,6vw,90px)}
+#selected-projects .project-fashion .project-meta h3{font-size:clamp(29px,3.1vw,46px);letter-spacing:-.065em}
+#selected-projects .project-fashion .project-meta p{max-width:310px}
+#selected-projects .project-fashion .carousel{height:clamp(470px,43vw,630px)}
+#selected-projects .project-fashion .slide[data-label="Storyboard"]{filter:drop-shadow(0 18px 28px rgba(31,28,26,.14))}
+#selected-projects .project-fashion .slide[data-label="Video"] .video-frame{box-shadow:0 24px 58px rgba(19,20,27,.24)}
+#selected-projects .project-fashion::after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;right:8%;bottom:-76px;
+  width:clamp(150px,19vw,260px);height:clamp(50px,7vw,92px);
+  background:linear-gradient(112deg,rgba(243,165,184,.78),rgba(40,85,245,.84));
+  clip-path:polygon(0 38%,12% 21%,27% 28%,39% 8%,56% 20%,69% 2%,82% 15%,100% 0,96% 57%,82% 68%,69% 54%,53% 80%,38% 63%,22% 88%,9% 72%);
+  transform:rotate(-7deg);opacity:.65
+}
+
+/* Jewelry takes a breath: narrower heading, whitespace and a fine divider. */
+#selected-projects .project-jewelry{
+  max-width:1010px;padding-top:clamp(24px,4vw,56px);
+  margin-bottom:clamp(130px,12vw,180px)
+}
+#selected-projects .project-jewelry::before{
+  content:"";position:absolute;top:0;left:0;width:min(42%,360px);height:1px;
+  background:linear-gradient(90deg,rgba(211,210,204,.9),rgba(211,210,204,0));pointer-events:none
+}
+#selected-projects .project-jewelry .project-meta{max-width:900px;margin-bottom:clamp(25px,3.3vw,44px)}
+#selected-projects .project-jewelry .project-meta h3{font-size:clamp(24px,2.45vw,35px);letter-spacing:-.05em}
+#selected-projects .project-jewelry .carousel{height:clamp(370px,34vw,490px)}
+#selected-projects .project-jewelry .carousel::before{inset:-9% -6%;filter:blur(18px);opacity:.68}
+#selected-projects .project-jewelry .slide[data-label="Photo 02"],
+#selected-projects .project-jewelry .slide[data-label="Photo 01"]{filter:drop-shadow(0 12px 28px rgba(50,41,33,.12))}
+#selected-projects .project-jewelry .slide[data-label="Video"] .video-frame{box-shadow:0 20px 48px rgba(50,41,33,.2)}
+#selected-projects .project-jewelry::after{right:14%;bottom:-68px;width:clamp(70px,9vw,120px);height:38px;opacity:.5}
+
+/* Fragrance becomes the atmospheric close, while keeping every slide intact. */
+#selected-projects .project-fragrance{max-width:1180px;margin-bottom:0}
+#selected-projects .project-fragrance .project-meta{max-width:1040px;margin:0 auto clamp(25px,3.2vw,42px);gap:clamp(28px,6vw,84px)}
+#selected-projects .project-fragrance .project-meta h3{font-size:clamp(27px,2.8vw,40px);letter-spacing:-.055em}
+#selected-projects .project-fragrance .carousel{height:clamp(400px,39vw,550px)}
+#selected-projects .project-fragrance .carousel::before{
+  width:116%;height:112%;left:-8%;top:-5%;
+  border-radius:37% 63% 54% 46% / 47% 35% 65% 53%;
+  background:radial-gradient(ellipse 62% 52% at 47% 49%,rgba(89,100,91,.24),transparent 82%),radial-gradient(ellipse 72% 46% at 55% 48%,rgba(225,226,216,.92),transparent 80%),radial-gradient(ellipse 48% 31% at 35% 62%,rgba(197,112,126,.16),transparent 84%);
+  filter:blur(5px);transform:rotate(-4deg)
+}
+#selected-projects .project-fragrance .slide[data-label="Photo 06"]{filter:drop-shadow(0 20px 36px rgba(80,50,50,.18))}
+#selected-projects .project-fragrance .slide[data-label="Video 02"]::before,
+#selected-projects .project-fragrance .slide[data-label="Video 01"]::before{
+  position:absolute;z-index:4;top:14px;left:14px;max-width:calc(100% - 28px);
+  padding:9px 12px;background:rgba(248,245,239,.91);color:#49383a;
+  font:500 9px/1.2 var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  box-shadow:0 5px 18px rgba(32,32,31,.13);pointer-events:none
+}
+#selected-projects .project-fragrance .slide[data-label="Video 02"]::before{content:"DIRECTION 01 — THE EVOLUTION"}
+#selected-projects .project-fragrance .slide[data-label="Video 01"]::before{content:"DIRECTION 02 — THE SCENT IN MOTION"}
+
+@media(max-width:700px){
+  #selected-projects .project-fashion{width:auto;margin-left:0;margin-right:0;margin-bottom:110px}
+  #selected-projects .project-fashion .project-meta{margin-left:0;gap:14px}
+  #selected-projects .project-fashion .carousel{height:clamp(400px,112vw,520px)}
+  #selected-projects .project-fashion::after{right:5%;bottom:-48px;width:130px;height:42px}
+  #selected-projects .project-jewelry{padding-top:28px;margin-bottom:110px}
+  #selected-projects .project-jewelry .carousel{height:clamp(330px,90vw,410px)}
+  #selected-projects .project-jewelry::after{bottom:-48px}
+  #selected-projects .project-fragrance .carousel{height:clamp(340px,92vw,440px)}
+  #selected-projects .project-fragrance .slide[data-label="Video 02"]::before,
+  #selected-projects .project-fragrance .slide[data-label="Video 01"]::before{top:8px;left:8px;padding:7px 8px;font-size:7px;letter-spacing:.08em}
+}
