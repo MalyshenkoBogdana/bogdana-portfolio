@@ -781,7 +781,7 @@
 }
 @media(min-width:701px) and (max-width:1400px){
   #creative-explorations .work-grid[data-layout="beauty"]::after{
-    left:24%;top:7%;font-size:clamp(76px,10vw,118px);color:rgba(111,20,50,.3)
+    left:43%;top:2%;font-size:clamp(64px,8vw,102px);color:rgba(111,20,50,.38)
   }
 }
 @media(min-width:1401px) and (max-width:1550px){
