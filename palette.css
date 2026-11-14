@@ -1730,3 +1730,45 @@
   }
   #exploration-groups .work-grid[data-layout="surreal"] .work-item .video-toggle{width:54px;height:54px}
 }
+
+/* Surreal & Playful — give the cocktail artwork a brighter liquid accent. */
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+  grid-column:1 / span 5;
+  margin-top:clamp(64px,7vw,104px);
+  transform:translateX(1%) rotate(-1.15deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4)::before{
+  content:"";inset:-12% -16% -8% -13%;
+  background:
+    radial-gradient(ellipse 49% 34% at 21% 28%,rgba(217,239,85,.92) 0 43%,transparent 44%),
+    radial-gradient(ellipse 57% 42% at 78% 72%,rgba(37,185,176,.76) 0 42%,transparent 43%),
+    radial-gradient(ellipse 40% 28% at 81% 19%,rgba(255,126,48,.82) 0 38%,transparent 39%),
+    linear-gradient(148deg,transparent 0 30%,rgba(241,111,88,.55) 30.2% 43%,transparent 43.2%),
+    linear-gradient(28deg,transparent 0 61%,rgba(242,230,74,.74) 61.2% 72%,transparent 72.2%);
+  clip-path:polygon(18% 0,39% 8%,56% 0,69% 15%,95% 9%,100% 34%,89% 52%,100% 67%,83% 82%,87% 100%,57% 91%,42% 100%,26% 85%,4% 96%,10% 69%,0 53%,14% 39%,4% 20%);
+  transform:rotate(-3deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4)::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  inset:-10% -12% -4% -10%;
+  background:
+    radial-gradient(ellipse 23% 15% at 92% 21%,rgba(40,85,245,.72) 0 14%,transparent 15%),
+    radial-gradient(ellipse 29% 19% at 13% 81%,rgba(255,126,48,.78) 0 12%,transparent 13%),
+    radial-gradient(ellipse 53% 37% at 71% 47%,transparent 0 67%,rgba(37,185,176,.76) 68% 69.5%,transparent 70.5%);
+  clip-path:polygon(12% 7%,36% 0,55% 8%,80% 0,98% 23%,88% 47%,100% 70%,76% 93%,57% 84%,39% 100%,15% 87%,0 62%,9% 39%);
+  transform:rotate(5deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4) .portfolio-image{
+  position:relative;z-index:1
+}
+@media(max-width:700px){
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+    grid-column:4 / span 9;margin:0;transform:rotate(.55deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4)::before{
+    inset:-10% -12% -6% -12%
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4)::after{
+    inset:-8% -9% -4% -9%
+  }
+}
