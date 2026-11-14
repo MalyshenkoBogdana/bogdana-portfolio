@@ -953,3 +953,14 @@
 #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::before{
   content:none!important;display:none!important
 }
+
+/* Final reset of legacy decorative layers within this category only. */
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::after,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::after,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::before,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::after{
+  content:none!important;display:none!important;background:none!important;box-shadow:none!important
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+  padding:0!important;background:transparent!important;outline:none!important;box-shadow:none!important
+}
