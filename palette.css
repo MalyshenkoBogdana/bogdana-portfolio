@@ -733,7 +733,7 @@
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item.video-work:nth-child(3){
   grid-column:5 / span 3;grid-row:1;aspect-ratio:var(--media-ratio,.5625 / 1);
-  width:112%;justify-self:center;margin-top:174px;z-index:4;transform:rotate(-1deg);padding:0;background:transparent;
+  width:120%;justify-self:center;margin-top:174px;z-index:4;transform:rotate(-1deg);padding:0;background:transparent;
   outline:0;outline-offset:0;box-shadow:none
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item.video-work:nth-child(3)::before{
