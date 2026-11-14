@@ -1437,3 +1437,15 @@
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2){transform:rotate(.4deg)}
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){transform:rotate(-.15deg)}
 }
+
+/* Direct offsets keep the approved two-image cluster close beside the video. */
+@media(min-width:701px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+    translate:clamp(-40px,-2.5vw,-28px) 0
+  }
+}
+@media(max-width:700px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){translate:none}
+}
