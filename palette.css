@@ -944,3 +944,12 @@
   }
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:hover{transform:none}
 }
+
+/* Clear inherited fashion-category mats so only the cool editorial accents remain. */
+#exploration-groups .explore-group:nth-child(2)::after{content:none!important;display:none!important}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::before{
+  background:transparent;clip-path:none;opacity:1;transform:rotate(1.3deg)
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::before{
+  content:none!important;display:none!important
+}
