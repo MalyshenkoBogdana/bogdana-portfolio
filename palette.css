@@ -1772,3 +1772,48 @@
     inset:-8% -9% -4% -9%
   }
 }
+
+/* Surreal & Playful — fit Lemon Hotel and Dragon video in their new order. */
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+  grid-column:8 / span 5;grid-row:1;aspect-ratio:1856 / 2304;
+  width:100%;margin-top:clamp(12px,1.8vw,24px);z-index:4;
+  transform:translateX(1%) rotate(.6deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{
+  inset:-8% -9% -5% -10%;
+  background:
+    linear-gradient(128deg,rgba(37,185,176,.34) 0 19%,transparent 19.3% 100%),
+    linear-gradient(35deg,transparent 0 55%,rgba(217,239,85,.5) 55.2% 69%,transparent 69.2%),
+    radial-gradient(ellipse at 80% 24%,rgba(40,85,245,.25) 0 10%,transparent 10.5%),
+    radial-gradient(ellipse at 16% 78%,rgba(241,111,88,.35) 0 13%,transparent 13.5%);
+  clip-path:polygon(8% 0,87% 7%,100% 30%,91% 54%,100% 92%,57% 100%,26% 91%,0 82%,8% 49%,0 23%);
+  transform:rotate(1.8deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+  grid-column:8 / span 5;grid-row:2;
+  width:100%;aspect-ratio:var(--media-ratio,.5625 / 1);
+  margin-top:clamp(24px,3vw,42px);z-index:3;
+  transform:translateX(1%) rotate(-.8deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{
+  inset:-9% -13% -5% -13%;
+  background:
+    linear-gradient(145deg,rgba(37,185,176,.8) 0 17%,rgba(176,151,213,.45) 17.2% 32%,transparent 32.2%),
+    linear-gradient(28deg,transparent 0 64%,rgba(217,239,85,.62) 64.2% 78%,transparent 78.2%),
+    radial-gradient(ellipse at 17% 83%,rgba(241,111,88,.58) 0 12%,transparent 12.5%);
+  clip-path:polygon(6% 2%,27% 0,47% 8%,72% 0,100% 14%,91% 55%,100% 90%,71% 100%,43% 91%,14% 98%,0 62%);
+  transform:rotate(-2deg)
+}
+@media(max-width:700px){
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+    grid-column:1 / span 8;grid-row:2;aspect-ratio:1856 / 2304;
+    margin:0;transform:rotate(-.45deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+    grid-column:4 / span 8;grid-row:3;
+    aspect-ratio:var(--media-ratio,.5625 / 1);margin:0;
+    transform:rotate(.7deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{inset:-7% -9% -5% -10%}
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{inset:-9% -12% -5% -12%}
+}
