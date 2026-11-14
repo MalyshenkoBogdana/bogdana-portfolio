@@ -690,9 +690,9 @@
   clip-path:none;transform:rotate(-5deg);opacity:.88
 }
 #creative-explorations .work-grid[data-layout="beauty"]::after{
-  content:"GLOSS";left:18%;top:23%;right:auto;bottom:auto;width:auto;height:auto;z-index:0;pointer-events:none;
+  content:"GLOSS";left:calc(100% - 10px);top:32%;right:auto;bottom:auto;width:auto;height:auto;z-index:0;pointer-events:none;
   border:0;border-radius:0;background:none;clip-path:none;transform:rotate(-9deg);
-  color:rgba(111,20,50,.28);font:italic clamp(88px,13.4vw,174px)/.76 var(--serif);
+  color:rgba(111,20,50,.62);font:italic clamp(72px,6vw,104px)/.76 var(--serif);
   letter-spacing:-.09em;opacity:1;white-space:nowrap
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item{
@@ -777,6 +777,11 @@
   }
   #creative-explorations .work-grid[data-layout="beauty"] .work-item.video-work:nth-child(3){
     grid-column:2 / span 5;grid-row:3;aspect-ratio:var(--media-ratio,.5625 / 1);margin:0 0 0;transform:rotate(-.8deg)
+  }
+}
+@media(min-width:701px) and (max-width:1400px){
+  #creative-explorations .work-grid[data-layout="beauty"]::after{
+    left:24%;top:7%;font-size:clamp(76px,10vw,118px);color:rgba(111,20,50,.3)
   }
 }
 
