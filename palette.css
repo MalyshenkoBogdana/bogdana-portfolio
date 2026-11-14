@@ -1449,3 +1449,18 @@
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){translate:none}
 }
+
+@media(min-width:701px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+    position:relative!important;
+    left:clamp(-40px,-2.5vw,-28px)!important;
+    translate:none!important
+  }
+}
+@media(max-width:700px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+    left:auto!important;translate:none!important
+  }
+}
