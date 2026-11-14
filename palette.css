@@ -964,3 +964,24 @@
 #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
   padding:0!important;background:transparent!important;outline:none!important;box-shadow:none!important
 }
+
+/* Palette isolation: suppress any older frame layers that can leak through cascade. */
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{
+  content:""!important;display:block!important;
+  background:linear-gradient(147deg,#2855f5 0 22%,rgba(40,85,245,.9) 22% 35%,transparent 35% 100%)!important
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::after,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::after,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::before,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::after{
+  content:none!important;display:none!important;background:none!important
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::before{
+  content:""!important;display:block!important;inset:-7px;z-index:-1;
+  background:transparent!important;border:1px solid rgba(191,194,202,.8)!important;box-shadow:none!important
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(1),
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+  border:0!important;outline:0!important;box-shadow:none!important;filter:none!important
+}
