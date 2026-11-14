@@ -985,3 +985,7 @@
 #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
   border:0!important;outline:0!important;box-shadow:none!important;filter:none!important
 }
+
+/* Remove the previous lime paint shape from this grid; keep only linework. */
+#exploration-groups .work-grid[data-layout="fashion"]::before{background:none!important}
+#exploration-groups .work-grid[data-layout="fashion"]::after{background:none!important;border:0}
