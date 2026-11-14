@@ -1263,3 +1263,67 @@
     border:0;border-right:1px solid rgba(151,160,177,.35);border-top:1px solid rgba(151,160,177,.3)
   }
 }
+
+/* Fashion & Objects — stronger architectural backdrop and measured tightening. */
+#exploration-groups .work-grid[data-layout="fashion"]::before{
+  z-index:0;left:2%;top:4%;width:74%;height:82%;
+  background:
+    linear-gradient(137deg,rgba(40,85,245,.16) 0 10%,transparent 10.3% 21%,rgba(179,176,197,.2) 21.3% 43%,transparent 43.3% 100%),
+    linear-gradient(36deg,transparent 0 55%,rgba(217,239,85,.13) 55.3% 63%,transparent 63.3% 100%);
+  clip-path:polygon(0 7%,83% 0,100% 76%,78% 100%,12% 88%);
+  transform:rotate(-3deg)
+}
+#exploration-groups .work-grid[data-layout="fashion"]::after{
+  z-index:0;right:1%;bottom:7%;width:38%;height:42%;
+  border:0;border-right:1px solid rgba(151,160,177,.58);
+  border-top:1px solid rgba(151,160,177,.52);
+  background:
+    linear-gradient(138deg,rgba(196,190,213,.19),rgba(217,239,85,.1) 56%,transparent 82%),
+    linear-gradient(41deg,transparent 0 70%,rgba(40,85,245,.08) 70.3% 78%,transparent 78.3%);
+  clip-path:polygon(0 14%,100% 0,92% 100%,14% 84%);
+  transform:rotate(1deg)
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{
+  z-index:0;inset:-5% -10% -3% -11%;
+  background:
+    linear-gradient(143deg,#2855f5 0 15%,rgba(40,85,245,.78) 15.2% 25%,transparent 25.2% 100%),
+    linear-gradient(322deg,rgba(40,85,245,.16),transparent 48%);
+  clip-path:polygon(3% 0,100% 5%,92% 89%,76% 100%,0 94%);
+  transform:rotate(-1.5deg)
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1) .video-frame,
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1) .portfolio-video{
+  z-index:1
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2),
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+  z-index:4
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::before{
+  border-color:rgba(164,169,184,.82);
+  transform:rotate(1.1deg)
+}
+@media(min-width:701px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2){
+    margin-left:clamp(-40px,-2.5vw,-28px)
+  }
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){
+    left:clamp(-40px,-2.5vw,-28px)
+  }
+}
+@media(max-width:700px){
+  #exploration-groups .work-grid[data-layout="fashion"]::before{
+    left:0;top:0;width:92%;height:37%;
+    background:
+      linear-gradient(137deg,rgba(40,85,245,.12) 0 13%,transparent 13.3% 24%,rgba(179,176,197,.16) 24.3% 44%,transparent 44.3%),
+      linear-gradient(36deg,transparent 0 58%,rgba(217,239,85,.1) 58.3% 68%,transparent 68.3%);
+    clip-path:polygon(0 6%,86% 0,100% 82%,78% 100%,9% 89%);
+    transform:rotate(-3deg)
+  }
+  #exploration-groups .work-grid[data-layout="fashion"]::after{
+    right:0;bottom:25%;width:38%;height:20%;z-index:0;
+    background:linear-gradient(138deg,rgba(196,190,213,.15),rgba(217,239,85,.07),transparent);
+    border:0;border-right:1px solid rgba(151,160,177,.42);border-top:1px solid rgba(151,160,177,.38)
+  }
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{z-index:0}
+}
