@@ -1327,3 +1327,73 @@
   }
   #exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{z-index:0}
 }
+
+/* Fashion & Objects — layered backdrop, kept beneath every original work. */
+#exploration-groups .explore-group:nth-child(2){isolation:isolate}
+#exploration-groups .explore-group:nth-child(2)::before{
+  z-index:0;inset:-3% -2%;opacity:1;filter:none;
+  background:
+    radial-gradient(ellipse 26% 22% at 80% 26%,rgba(183,177,202,.21),transparent 78%),
+    radial-gradient(ellipse 27% 18% at 69% 78%,rgba(217,239,85,.16),transparent 80%),
+    radial-gradient(ellipse 24% 18% at 13% 74%,rgba(40,85,245,.1),transparent 79%),
+    linear-gradient(126deg,transparent 8% 18%,rgba(40,85,245,.09) 18.2% 27%,transparent 27.2% 55%,rgba(183,177,202,.12) 55.2% 66%,transparent 66.2% 100%);
+}
+#exploration-groups .explore-group:nth-child(2) .group-head,
+#exploration-groups .explore-group:nth-child(2) .work-grid{position:relative;z-index:1}
+#exploration-groups .work-grid[data-layout="fashion"]{
+  background-image:
+    linear-gradient(90deg,rgba(111,126,151,.05) 1px,transparent 1px),
+    linear-gradient(rgba(111,126,151,.034) 1px,transparent 1px),
+    linear-gradient(132deg,transparent 0 19%,rgba(40,85,245,.045) 19.2% 32%,transparent 32.2% 100%),
+    radial-gradient(circle,rgba(120,126,143,.35) 1px,transparent 1.4px);
+  background-size:8.3333% 100%,100% 104px,100% 100%,22px 22px;
+  background-position:left top,0 18px,0 0,95% 8%;
+  background-repeat:repeat,repeat,no-repeat,no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 77%,rgba(0,0,0,.5) 100%);
+  mask-image:linear-gradient(90deg,#000 0%,#000 77%,rgba(0,0,0,.5) 100%)
+}
+#exploration-groups .work-grid[data-layout="fashion"]::after{
+  right:0;bottom:5%;width:42%;height:48%;z-index:0;
+  border:0;border-right:1px solid rgba(151,160,177,.58);
+  border-top:1px solid rgba(151,160,177,.52);
+  border-radius:0;
+  background:
+    linear-gradient(138deg,rgba(196,190,213,.2),rgba(217,239,85,.1) 56%,transparent 82%),
+    linear-gradient(41deg,transparent 0 70%,rgba(40,85,245,.09) 70.3% 78%,transparent 78.3%);
+  clip-path:polygon(0 14%,100% 0,92% 100%,14% 84%);transform:rotate(1deg)
+}
+#exploration-groups .work-grid[data-layout="fashion"]::after{
+  border-radius:0 34% 0 0;
+}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{
+  z-index:0;inset:-5% -10% -3% -11%;
+  background:
+    linear-gradient(143deg,#2855f5 0 15%,rgba(40,85,245,.78) 15.2% 25%,transparent 25.2% 100%),
+    linear-gradient(322deg,rgba(40,85,245,.16),transparent 48%);
+  clip-path:polygon(3% 0,100% 5%,92% 89%,76% 100%,0 94%)
+}
+@media(min-width:701px){
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2){margin-left:clamp(-40px,-2.5vw,-28px)}
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){left:clamp(-40px,-2.5vw,-28px)}
+}
+@media(max-width:700px){
+  #exploration-groups .explore-group:nth-child(2)::before{
+    inset:-3% -5%;opacity:.78;
+    background:
+      radial-gradient(ellipse 32% 18% at 79% 28%,rgba(183,177,202,.18),transparent 78%),
+      radial-gradient(ellipse 32% 16% at 66% 78%,rgba(217,239,85,.12),transparent 80%),
+      linear-gradient(126deg,transparent 8% 18%,rgba(40,85,245,.07) 18.2% 27%,transparent 27.2% 100%)
+  }
+  #exploration-groups .work-grid[data-layout="fashion"]{
+    -webkit-mask-image:none;mask-image:none;
+    background-image:
+      linear-gradient(90deg,rgba(111,126,151,.04) 1px,transparent 1px),
+      linear-gradient(rgba(111,126,151,.028) 1px,transparent 1px),
+      radial-gradient(circle,rgba(120,126,143,.3) 1px,transparent 1.4px);
+    background-size:16.6667% 100%,100% 100px,22px 22px;
+    background-position:left top,0 16px,96% 5%;
+    background-repeat:repeat,repeat,no-repeat
+  }
+  #exploration-groups .work-grid[data-layout="fashion"]::after{right:0;bottom:25%;width:38%;height:20%}
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item.video-work:nth-child(1)::before{z-index:0}
+}
