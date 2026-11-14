@@ -1609,3 +1609,124 @@
   }
   #exploration-groups .work-grid[data-layout="surreal"] .work-item:hover{transform:none}
 }
+
+
+/* Surreal & Playful — final exhibition composition, scoped to this category. */
+#exploration-groups .explore-group:nth-child(3) .group-head::after{content:none}
+#exploration-groups .work-grid[data-layout="surreal"]{
+  min-height:clamp(1260px,104vw,1440px);
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-template-rows:auto auto;
+  column-gap:clamp(12px,1.8vw,24px);
+  row-gap:clamp(24px,3vw,42px);
+  padding:clamp(12px,2vw,24px) 0 clamp(40px,5vw,66px);
+  background:
+    linear-gradient(90deg,rgba(91,111,130,.035) 1px,transparent 1px) 0 0 / 8.333% 100%,
+    radial-gradient(circle,rgba(40,85,245,.3) 1px,transparent 1.5px) 96% 11% / 22px 22px no-repeat
+}
+#exploration-groups .work-grid[data-layout="surreal"]::before{
+  left:4%;top:1%;width:88%;height:75%;
+  background:
+    radial-gradient(ellipse 20% 16% at 8% 18%,rgba(241,111,88,.23),transparent 78%),
+    linear-gradient(142deg,transparent 0 14%,rgba(241,111,88,.28) 14.2% 24%,transparent 24.2% 100%),
+    linear-gradient(30deg,transparent 0 38%,rgba(217,239,85,.29) 38.2% 47%,transparent 47.2% 100%),
+    linear-gradient(151deg,transparent 0 54%,rgba(37,185,176,.23) 54.2% 68%,transparent 68.2% 100%),
+    linear-gradient(34deg,transparent 0 73%,rgba(176,151,213,.23) 73.2% 82%,transparent 82.2% 100%);
+  clip-path:polygon(2% 12%,20% 0,42% 8%,63% 1%,94% 14%,100% 43%,84% 63%,96% 82%,71% 100%,47% 88%,26% 100%,0 77%,8% 48%);
+  transform:rotate(-2deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"]::after{
+  right:1%;bottom:6%;width:48%;height:35%;
+  border:0;border-radius:0;
+  background:
+    radial-gradient(ellipse 54% 70% at 78% 63%,rgba(217,239,85,.25) 0 38%,transparent 39%),
+    radial-gradient(ellipse 55% 66% at 70% 59%,transparent 0 61%,rgba(37,185,176,.56) 61.5% 62.2%,transparent 63%),
+    linear-gradient(148deg,transparent 0 38%,rgba(241,111,88,.23) 38.3% 42%,transparent 42.3%),
+    linear-gradient(28deg,transparent 0 55%,rgba(40,85,245,.18) 55.3% 58%,transparent 58.3%);
+  clip-path:polygon(8% 15%,30% 0,58% 12%,78% 4%,100% 28%,88% 58%,98% 83%,63% 100%,34% 82%,0 92%);
+  transform:rotate(7deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(1){
+  grid-column:1 / span 7;grid-row:1;aspect-ratio:1856 / 2304;
+  margin-top:clamp(0px,1.5vw,20px);z-index:3;transform:translateX(-1.2%) rotate(-.7deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(1)::before{
+  inset:-7% -7% -3% -3%;
+  background:
+    linear-gradient(143deg,rgba(241,111,88,.9) 0 13%,rgba(241,111,88,.29) 13.2% 31%,transparent 31.2%),
+    linear-gradient(31deg,transparent 0 50%,rgba(217,239,85,.47) 50.2% 62%,transparent 62.2%),
+    radial-gradient(ellipse at 77% 73%,rgba(176,151,213,.35) 0 13%,transparent 13.5%);
+  clip-path:polygon(4% 8%,81% 0,100% 16%,92% 62%,100% 83%,66% 100%,29% 92%,0 74%);
+  transform:rotate(1.4deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+  grid-column:9 / span 4;grid-row:1;
+  width:100%;aspect-ratio:var(--media-ratio,.5625 / 1);
+  margin-top:clamp(32px,4vw,58px);z-index:4;transform:translateX(1.5%) rotate(1.2deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{
+  inset:-9% -13% -4% -12%;
+  background:
+    linear-gradient(145deg,rgba(37,185,176,.85) 0 16%,rgba(176,151,213,.48) 16.2% 29%,transparent 29.2%),
+    linear-gradient(28deg,transparent 0 65%,rgba(217,239,85,.62) 65.2% 77%,transparent 77.2%),
+    radial-gradient(ellipse at 18% 84%,rgba(241,111,88,.45) 0 12%,transparent 12.5%);
+  clip-path:polygon(6% 2%,26% 0,47% 7%,74% 1%,100% 14%,91% 57%,100% 89%,69% 100%,38% 91%,14% 97%,0 62%);
+  transform:rotate(-2deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+  grid-column:8 / span 5;grid-row:2;aspect-ratio:1856 / 2304;
+  margin-top:clamp(8px,1vw,16px);z-index:3;transform:translateX(1%) rotate(.55deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{
+  inset:-8% -7% -5% -9%;
+  border:0;border-radius:0;
+  background:
+    linear-gradient(128deg,rgba(37,185,176,.28) 0 17%,transparent 17.3% 100%),
+    linear-gradient(35deg,transparent 0 55%,rgba(217,239,85,.42) 55.2% 68%,transparent 68.2%),
+    radial-gradient(ellipse at 80% 24%,rgba(40,85,245,.2) 0 9%,transparent 9.5%);
+  clip-path:polygon(8% 0,87% 7%,100% 30%,91% 54%,100% 92%,57% 100%,26% 91%,0 82%,8% 49%,0 23%);
+  transform:rotate(1.8deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+  grid-column:2 / span 4;grid-row:2;aspect-ratio:1856 / 2304;
+  margin-top:clamp(78px,8vw,116px);z-index:4;transform:translateX(-1%) rotate(-1deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4)::before{
+  inset:-8% -14% -5% -12%;
+  background:
+    radial-gradient(ellipse at 83% 28%,rgba(217,239,85,.95) 0 4%,transparent 4.5%),
+    radial-gradient(ellipse at 18% 74%,rgba(40,85,245,.65) 0 2.2%,transparent 2.8%),
+    linear-gradient(34deg,rgba(242,230,74,.65),rgba(241,111,88,.32) 39%,transparent 72%),
+    linear-gradient(142deg,transparent 0 39%,rgba(37,185,176,.25) 39.2% 51%,transparent 51.2%);
+  clip-path:polygon(19% 0,71% 5%,100% 25%,89% 51%,100% 79%,66% 100%,39% 90%,8% 100%,0 70%,12% 39%);
+  transform:rotate(-2.5deg)
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:hover{filter:none}
+@media(max-width:700px){
+  #exploration-groups .explore-group:nth-child(3) .group-head::after{content:none}
+  #exploration-groups .work-grid[data-layout="surreal"]{
+    min-height:0;grid-template-columns:repeat(12,minmax(0,1fr));
+    grid-template-rows:auto auto auto auto;
+    column-gap:8px;row-gap:clamp(22px,6vw,32px);padding:4px 0 32px;
+    background:linear-gradient(90deg,rgba(91,111,130,.03) 1px,transparent 1px) 0 0 / 16.666% 100%
+  }
+  #exploration-groups .work-grid[data-layout="surreal"]::before{
+    left:0;top:1%;width:100%;height:73%;clip-path:polygon(2% 5%,30% 0,53% 7%,84% 1%,100% 16%,91% 40%,100% 64%,67% 78%,40% 70%,16% 100%,0 75%,8% 43%);
+  }
+  #exploration-groups .work-grid[data-layout="surreal"]::after{
+    right:0;bottom:3%;width:60%;height:22%;transform:rotate(5deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(1){
+    grid-column:1 / span 10;grid-row:1;margin:0;transform:rotate(-.45deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+    grid-column:4 / span 8;grid-row:2;margin:0;transform:rotate(.7deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+    grid-column:1 / span 8;grid-row:3;margin:0;transform:rotate(-.45deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+    grid-column:4 / span 9;grid-row:4;margin:0;transform:rotate(.55deg)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item .video-toggle{width:54px;height:54px}
+}
