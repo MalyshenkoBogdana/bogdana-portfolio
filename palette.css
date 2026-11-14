@@ -690,7 +690,7 @@
   clip-path:none;transform:rotate(-5deg);opacity:.88
 }
 #creative-explorations .work-grid[data-layout="beauty"]::after{
-  content:"GLOSS";left:23%;top:37%;right:auto;bottom:auto;width:auto;height:auto;z-index:-1;
+  content:"GLOSS";left:18%;top:23%;right:auto;bottom:auto;width:auto;height:auto;z-index:0;pointer-events:none;
   border:0;border-radius:0;background:none;clip-path:none;transform:rotate(-9deg);
   color:rgba(111,20,50,.28);font:italic clamp(88px,13.4vw,174px)/.76 var(--serif);
   letter-spacing:-.09em;opacity:1;white-space:nowrap
@@ -715,8 +715,8 @@
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(1)::after{
   content:"";position:absolute;right:-7%;bottom:9%;width:74px;height:31px;
-  border-top:1.5px solid rgba(125,12,43,.78);border-radius:52% 48% 0 0;
-  transform:rotate(-22deg)
+  z-index:2;background:none;clip-path:none;border-top:1.5px solid rgba(125,12,43,.78);
+  border-radius:52% 48% 0 0;transform:rotate(-22deg)
 }
 #creative-explorations .work-grid[data-layout="beauty"] .work-item:nth-child(2){
   grid-column:8 / span 5;grid-row:1;aspect-ratio:1824 / 2288;margin-top:78px;
