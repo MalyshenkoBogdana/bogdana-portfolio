@@ -45,8 +45,8 @@ const mediaManifest = {
 };
 const explorationData = [
   {id:'beauty',title:'BEAUTY & PRODUCT',description:{uk:'Б’юті-візуали, предметна зйомка та концепції, що передають відчуття.',en:'Beauty, product imagery and sensory visual concepts.'},layout:'beauty',items:[['DIOR ADDICT LIP GLOW OIL 104 BLACK CHERRY','IMAGE'],['PINK LIQUID — CANDY POP BEAUTY','IMAGE'],['CARAMEL BONBONS','VIDEO']]},
+  {id:'surreal',title:'SURREAL & PLAYFUL',description:{uk:'Уявні світи, сюрреалістичні концепції та несподівані візуальні історії.',en:'Imaginative worlds, surreal concepts and unexpected visual storytelling.'},layout:'surreal',items:[['GIANT STRAWBERRY CAKE','IMAGE'],['BABY DRAGON PIZZA CHEF','VIDEO'],['LEMON HOTEL','IMAGE'],['MANGO PASSION COCKTAIL','IMAGE']]},
   {id:'fashion',title:'FASHION & OBJECTS',description:{uk:'Візуали, натхненні модою, виразні об’єкти та експериментальна естетика.',en:'Fashion-inspired visuals, statement objects and experimental aesthetics.'},layout:'fashion',items:[['THE WIND DRESS','VIDEO'],['GLITTER MAKEUP','IMAGE'],['THE IMPOSSIBLE BAG — DIOR LADY D-LITE','IMAGE']]},
-  {id:'surreal',title:'SURREAL & PLAYFUL',description:{uk:'Уявні світи, сюрреалістичні концепції та несподівані візуальні історії.',en:'Imaginative worlds, surreal concepts and unexpected visual storytelling.'},layout:'surreal',items:[['GIANT STRAWBERRY CAKE','IMAGE'],['LEMON HOTEL','IMAGE'],['BABY DRAGON PIZZA CHEF','VIDEO'],['MANGO PASSION COCKTAIL','IMAGE']]}
 ];
 let currentLanguage='uk';
 const langButtons=[...document.querySelectorAll('[data-lang]')];
@@ -127,7 +127,7 @@ document.querySelectorAll('.project').forEach(project=>{
 });
 const gallery=document.querySelector('#exploration-groups');
 explorationData.forEach((group,index)=>{
-  const section=document.createElement('section');section.className='explore-group';section.setAttribute('aria-labelledby',`group-${group.id}`);
+  const section=document.createElement('section');section.className='explore-group';section.dataset.group=group.id;section.setAttribute('aria-labelledby',`group-${group.id}`);
   const head=document.createElement('header');head.className='group-head';const h=document.createElement('h3');h.id=`group-${group.id}`;h.textContent=group.title;const desc=document.createElement('p');desc.textContent=group.description.uk;head.append(h,desc);
   const grid=document.createElement('div');grid.className='work-grid';grid.dataset.layout=group.layout;
   group.items.forEach(([title,kind],itemIndex)=>{const item=document.createElement('div');item.className=`work-item${kind==='VIDEO'?' video-work':''}`;const palette=['var(--yellow)','var(--pink)','var(--turquoise)','var(--coral)'];item.append(makeMedia(title,kind,palette[itemIndex%palette.length],`gallery:${group.id}|${title}`));grid.append(item)});
