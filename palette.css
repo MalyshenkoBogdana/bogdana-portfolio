@@ -141,14 +141,14 @@
 .group-head::after{position:absolute;right:0;top:15px;font:9px var(--mono);letter-spacing:.15em;color:rgba(32,32,31,.52)}
 .explore-group:nth-child(1)::before{background:radial-gradient(circle at 25% 46%,rgba(243,165,184,.48) 0 13%,transparent 13.3%),radial-gradient(circle at 66% 68%,rgba(242,230,74,.68) 0 9%,transparent 9.4%),radial-gradient(circle at 89% 28%,rgba(241,111,88,.5) 0 4%,transparent 4.4%),linear-gradient(112deg,transparent 44%,rgba(40,85,245,.26) 44.5% 46%,transparent 46.5%)}
 .explore-group:nth-child(1) .group-head::after{content:"VISUAL EXPERIMENT   /   01"}
-.explore-group:nth-child(2)::before{background:radial-gradient(ellipse at 24% 42%,rgba(40,85,245,.4) 0 15%,transparent 15.4%),radial-gradient(ellipse at 83% 32%,rgba(217,239,85,.68) 0 12%,transparent 12.4%),linear-gradient(138deg,transparent 61%,rgba(243,165,184,.56) 61.5% 70%,transparent 70.5%)}
-.explore-group:nth-child(2) .group-head::after{content:"OBJECT   /   FORM   /   MOTION   /   02"}
-.explore-group:nth-child(3)::before{background:radial-gradient(circle at 17% 38%,rgba(241,111,88,.54) 0 12%,transparent 12.4%),radial-gradient(circle at 54% 68%,rgba(37,185,176,.56) 0 15%,transparent 15.4%),radial-gradient(circle at 86% 35%,rgba(217,239,85,.68) 0 11%,transparent 11.4%),linear-gradient(24deg,transparent 39%,rgba(242,230,74,.62) 39.5% 43%,transparent 43.5%)}
-.explore-group:nth-child(3) .group-head::after{content:"CREATIVE STUDY   /   03"}
+.explore-group[data-group="fashion"]::before{background:radial-gradient(ellipse at 24% 42%,rgba(40,85,245,.4) 0 15%,transparent 15.4%),radial-gradient(ellipse at 83% 32%,rgba(217,239,85,.68) 0 12%,transparent 12.4%),linear-gradient(138deg,transparent 61%,rgba(243,165,184,.56) 61.5% 70%,transparent 70.5%)}
+.explore-group[data-group="fashion"] .group-head::after{content:"OBJECT   /   FORM   /   MOTION   /   02"}
+.explore-group[data-group="surreal"]::before{background:radial-gradient(circle at 17% 38%,rgba(241,111,88,.54) 0 12%,transparent 12.4%),radial-gradient(circle at 54% 68%,rgba(37,185,176,.56) 0 15%,transparent 15.4%),radial-gradient(circle at 86% 35%,rgba(217,239,85,.68) 0 11%,transparent 11.4%),linear-gradient(24deg,transparent 39%,rgba(242,230,74,.62) 39.5% 43%,transparent 43.5%)}
+.explore-group[data-group="surreal"] .group-head::after{content:"CREATIVE STUDY   /   03"}
 .group-head h3{position:relative;font-size:clamp(21px,2.3vw,29px);font-weight:500;letter-spacing:-.065em}
 .group-head h3::after{content:"";display:block;width:42px;height:2px;margin-top:8px;background:var(--coral);opacity:.9}
-.explore-group:nth-child(2) .group-head h3::after{background:var(--blue)}
-.explore-group:nth-child(3) .group-head h3::after{background:var(--turquoise)}
+.explore-group[data-group="fashion"] .group-head h3::after{background:var(--blue)}
+.explore-group[data-group="surreal"] .group-head h3::after{background:var(--turquoise)}
 .group-head p{font-size:13px;max-width:390px}
 .work-grid{position:relative;isolation:isolate;gap:clamp(13px,2vw,26px);align-items:start;grid-auto-flow:row}
 .work-grid::before,.work-grid::after{content:"";position:absolute;z-index:-1;pointer-events:none}
@@ -232,7 +232,7 @@
 #exploration-groups .work-grid[data-layout="beauty"]::after{width:88px;height:12px;border:0;border-radius:0;background:rgba(40,85,245,.36);clip-path:polygon(0 36%,22% 16%,48% 35%,74% 0,100% 20%,93% 71%,66% 86%,43% 66%,18% 100%,4% 72%);transform:rotate(9deg);opacity:.74}
 #exploration-groups .work-grid[data-layout="surreal"]::before{width:80px;height:13px;background:rgba(217,239,85,.72);clip-path:polygon(0 30%,20% 12%,44% 26%,66% 0,100% 18%,94% 66%,69% 83%,43% 64%,19% 100%,4% 72%);transform:rotate(-10deg);opacity:.72}
 #exploration-groups .work-grid[data-layout="surreal"]::after{right:4%;bottom:9%;width:70px;height:10px;border:0;border-radius:0;background:rgba(241,111,88,.48);clip-path:polygon(0 35%,26% 12%,50% 25%,75% 0,100% 19%,95% 67%,69% 85%,44% 66%,20% 100%,5% 72%);transform:rotate(7deg)}
-#exploration-groups .explore-group:nth-child(2)::after{left:23%;width:66px;height:8px;border:0;border-radius:0;background:rgba(40,85,245,.42);clip-path:polygon(0 32%,24% 10%,50% 30%,76% 0,100% 19%,93% 72%,68% 84%,44% 68%,20% 100%,5% 74%);transform:rotate(-7deg);opacity:.72}
+#exploration-groups .explore-group[data-group="fashion"]::after{left:23%;width:66px;height:8px;border:0;border-radius:0;background:rgba(40,85,245,.42);clip-path:polygon(0 32%,24% 10%,50% 30%,76% 0,100% 19%,93% 72%,68% 84%,44% 68%,20% 100%,5% 74%);transform:rotate(-7deg);opacity:.72}
 #exploration-groups .work-item .video-frame{overflow:hidden}
 #exploration-groups .work-item .portfolio-video{position:absolute;inset:0;min-width:0;min-height:0;width:100%;height:100%;object-fit:contain;background:transparent}
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){.hero-title-wrap::after{opacity:.8}}
@@ -365,12 +365,12 @@
     radial-gradient(ellipse 23% 34% at 89% 28%,rgba(241,111,88,.23),transparent 82%),
     linear-gradient(126deg,transparent 45%,rgba(40,85,245,.12) 46% 48%,transparent 49%)
 }
-#creative-explorations .explore-group:nth-child(2)::before{
+#creative-explorations .explore-group[data-group="fashion"]::before{
   background:radial-gradient(ellipse 40% 44% at 22% 47%,rgba(40,85,245,.3),transparent 80%),
     radial-gradient(ellipse 32% 40% at 80% 31%,rgba(217,239,85,.42),transparent 82%),
     radial-gradient(ellipse 32% 26% at 58% 78%,rgba(243,165,184,.26),transparent 82%)
 }
-#creative-explorations .explore-group:nth-child(3)::before{
+#creative-explorations .explore-group[data-group="surreal"]::before{
   background:radial-gradient(ellipse 34% 46% at 17% 38%,rgba(241,111,88,.35),transparent 82%),
     radial-gradient(ellipse 38% 45% at 57% 64%,rgba(37,185,176,.36),transparent 80%),
     radial-gradient(ellipse 32% 36% at 87% 35%,rgba(217,239,85,.4),transparent 80%),
@@ -459,7 +459,7 @@
   clip-path:polygon(0 37%,17% 16%,38% 35%,60% 7%,82% 24%,100% 0,95% 66%,73% 88%,51% 69%,29% 100%,7% 74%);
   transform:translateX(-50%) rotate(-5deg);opacity:.78
 }
-#creative-explorations #exploration-groups .explore-group:nth-child(2)::after{left:26%;width:62px;background:rgba(40,85,245,.42);transform:translateY(15%) rotate(7deg)}
+#creative-explorations #exploration-groups .explore-group[data-group="fashion"]::after{left:26%;width:62px;background:rgba(40,85,245,.42);transform:translateY(15%) rotate(7deg)}
 
 @media(max-width:700px){
   #creative-explorations.explorations{padding-top:26px;padding-bottom:66px}
@@ -816,7 +816,7 @@
 #selected-projects .project-fashion::after{left:8%;width:clamp(76px,10vw,132px);height:8px;background:var(--coral);clip-path:polygon(0 40%,18% 16%,37% 48%,56% 12%,73% 40%,100% 0,95% 70%,70% 86%,49% 58%,27% 100%,8% 75%);transform:rotate(-5deg);opacity:.7}
 #selected-projects .project-jewelry::after{right:11%;width:clamp(54px,7vw,88px);height:26px;border-top:1px solid var(--muted-gold);border-bottom:1px solid rgba(184,161,124,.45);border-radius:50%;transform:rotate(8deg);opacity:.75}
 #exploration-groups .explore-group:not(:last-child)::after{content:"";position:absolute;pointer-events:none;bottom:calc(clamp(72px,10vw,132px) / -2);left:50%;width:62px;height:12px;border-top:2px solid var(--coral);border-radius:50%;transform:translateX(-50%) rotate(-6deg);opacity:.62}
-#exploration-groups .explore-group:nth-child(2)::after{left:23%;width:44px;height:44px;border:1px dashed var(--blue);border-radius:50%;transform:translateY(35%) rotate(10deg);opacity:.48}
+#exploration-groups .explore-group[data-group="fashion"]::after{left:23%;width:44px;height:44px;border:1px dashed var(--blue);border-radius:50%;transform:translateY(35%) rotate(10deg);opacity:.48}
 @media(max-width:700px){
   .media-lightbox{padding:7vh 4vw}
   .lightbox-image{max-width:92vw;max-height:84dvh}
@@ -866,13 +866,13 @@
 
 
 /* Fashion & Objects: cool architectural editorial composition. */
-#exploration-groups .explore-group:nth-child(2)::before{
+#exploration-groups .explore-group[data-group="fashion"]::before{
   inset:-5% -3%;filter:blur(34px);opacity:.78;
   background:radial-gradient(ellipse 30% 43% at 24% 28%,rgba(40,85,245,.15),transparent 76%),
     radial-gradient(ellipse 28% 32% at 79% 31%,rgba(153,166,188,.12),transparent 78%),
     radial-gradient(ellipse 38% 21% at 59% 76%,rgba(88,115,180,.1),transparent 80%)
 }
-#exploration-groups .explore-group:nth-child(2) .group-head::after{content:none!important}
+#exploration-groups .explore-group[data-group="fashion"] .group-head::after{content:none!important}
 #exploration-groups .work-grid[data-layout="fashion"]{
   position:relative;isolation:isolate;min-height:clamp(740px,60vw,850px);overflow:visible;
   grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,2.1vw,26px);row-gap:0;
@@ -946,7 +946,7 @@
 }
 
 /* Clear inherited fashion-category mats so only the cool editorial accents remain. */
-#exploration-groups .explore-group:nth-child(2)::after{content:none!important;display:none!important}
+#exploration-groups .explore-group[data-group="fashion"]::after{content:none!important;display:none!important}
 #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(2)::before{
   background:transparent;clip-path:none;opacity:1;transform:rotate(1.3deg)
 }
@@ -992,7 +992,7 @@
 
 
 /* Surreal & Playful: an expressive, four-work exhibition composition. */
-#exploration-groups .explore-group:nth-child(3)::before{
+#exploration-groups .explore-group[data-group="surreal"]::before{
   inset:-6% -4%;opacity:.9;filter:blur(38px);
   background:
     radial-gradient(ellipse 34% 24% at 18% 19%,rgba(37,185,176,.24),transparent 78%),
@@ -1000,7 +1000,7 @@
     radial-gradient(ellipse 34% 23% at 38% 76%,rgba(241,111,88,.18),transparent 78%),
     radial-gradient(ellipse 25% 22% at 77% 80%,rgba(176,151,213,.2),transparent 78%)
 }
-#exploration-groups .explore-group:nth-child(3) .group-head::after{content:none!important}
+#exploration-groups .explore-group[data-group="surreal"] .group-head::after{content:none!important}
 #exploration-groups .work-grid[data-layout="surreal"]{
   position:relative;isolation:isolate;min-height:0;overflow:visible;
   display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
@@ -1091,7 +1091,7 @@
   filter:none;transform:translateY(-4px) rotate(0deg)
 }
 @media(max-width:700px){
-  #exploration-groups .explore-group:nth-child(3)::before{
+  #exploration-groups .explore-group[data-group="surreal"]::before{
     inset:-4% -7%;filter:blur(24px);
     background:
       radial-gradient(ellipse 45% 18% at 15% 20%,rgba(37,185,176,.2),transparent 78%),
@@ -1207,7 +1207,7 @@
 
 
 /* Fashion & Objects: final background and spacing refinement. */
-#exploration-groups .explore-group:nth-child(2)::before{
+#exploration-groups .explore-group[data-group="fashion"]::before{
   inset:-7% -5%;opacity:.9;filter:blur(30px);
   background:
     radial-gradient(ellipse 29% 31% at 18% 23%,rgba(40,85,245,.17),transparent 77%),
@@ -1245,7 +1245,7 @@
   }
 }
 @media(max-width:700px){
-  #exploration-groups .explore-group:nth-child(2)::before{
+  #exploration-groups .explore-group[data-group="fashion"]::before{
     inset:-4% -7%;filter:blur(23px);opacity:.72
   }
   #exploration-groups .work-grid[data-layout="fashion"]{
@@ -1329,8 +1329,8 @@
 }
 
 /* Fashion & Objects — layered backdrop, kept beneath every original work. */
-#exploration-groups .explore-group:nth-child(2){isolation:isolate}
-#exploration-groups .explore-group:nth-child(2)::before{
+#exploration-groups .explore-group[data-group="fashion"]{isolation:isolate}
+#exploration-groups .explore-group[data-group="fashion"]::before{
   z-index:0;inset:-3% -2%;opacity:1;filter:none;
   background:
     radial-gradient(ellipse 26% 22% at 80% 26%,rgba(183,177,202,.21),transparent 78%),
@@ -1338,8 +1338,8 @@
     radial-gradient(ellipse 24% 18% at 13% 74%,rgba(40,85,245,.1),transparent 79%),
     linear-gradient(126deg,transparent 8% 18%,rgba(40,85,245,.09) 18.2% 27%,transparent 27.2% 55%,rgba(183,177,202,.12) 55.2% 66%,transparent 66.2% 100%);
 }
-#exploration-groups .explore-group:nth-child(2) .group-head,
-#exploration-groups .explore-group:nth-child(2) .work-grid{position:relative;z-index:1}
+#exploration-groups .explore-group[data-group="fashion"] .group-head,
+#exploration-groups .explore-group[data-group="fashion"] .work-grid{position:relative;z-index:1}
 #exploration-groups .work-grid[data-layout="fashion"]{
   background-image:
     linear-gradient(90deg,rgba(111,126,151,.05) 1px,transparent 1px),
@@ -1377,7 +1377,7 @@
   #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3){left:clamp(-40px,-2.5vw,-28px)}
 }
 @media(max-width:700px){
-  #exploration-groups .explore-group:nth-child(2)::before{
+  #exploration-groups .explore-group[data-group="fashion"]::before{
     inset:-3% -5%;opacity:.78;
     background:
       radial-gradient(ellipse 32% 18% at 79% 28%,rgba(183,177,202,.18),transparent 78%),
@@ -1467,8 +1467,8 @@
 
 
 /* Surreal & Playful — surreal exhibition, with the established work order. */
-#exploration-groups .explore-group:nth-child(3){position:relative;isolation:isolate}
-#exploration-groups .explore-group:nth-child(3)::before{
+#exploration-groups .explore-group[data-group="surreal"]{position:relative;isolation:isolate}
+#exploration-groups .explore-group[data-group="surreal"]::before{
   z-index:0;inset:-4% -3%;opacity:1;filter:none;pointer-events:none;
   background:
     radial-gradient(ellipse 28% 22% at 18% 25%,rgba(241,111,88,.19),transparent 78%),
@@ -1477,8 +1477,8 @@
     radial-gradient(ellipse 22% 20% at 33% 82%,rgba(176,151,213,.18),transparent 78%),
     linear-gradient(128deg,transparent 12% 22%,rgba(242,230,74,.1) 22.2% 30%,transparent 30.2% 100%)
 }
-#exploration-groups .explore-group:nth-child(3) .group-head,
-#exploration-groups .explore-group:nth-child(3) .work-grid{position:relative;z-index:1}
+#exploration-groups .explore-group[data-group="surreal"] .group-head,
+#exploration-groups .explore-group[data-group="surreal"] .work-grid{position:relative;z-index:1}
 #exploration-groups .work-grid[data-layout="surreal"]{
   min-height:clamp(1260px,106vw,1490px);
   display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
@@ -1575,7 +1575,7 @@
   filter:none;transform:translateY(-4px) rotate(0deg)
 }
 @media(max-width:700px){
-  #exploration-groups .explore-group:nth-child(3)::before{
+  #exploration-groups .explore-group[data-group="surreal"]::before{
     inset:-3% -6%;opacity:.78;
     background:
       radial-gradient(ellipse 35% 18% at 18% 19%,rgba(241,111,88,.18),transparent 78%),
@@ -1612,7 +1612,7 @@
 
 
 /* Surreal & Playful — final exhibition composition, scoped to this category. */
-#exploration-groups .explore-group:nth-child(3) .group-head::after{content:none}
+#exploration-groups .explore-group[data-group="surreal"] .group-head::after{content:none}
 #exploration-groups .work-grid[data-layout="surreal"]{
   min-height:clamp(1260px,104vw,1440px);
   grid-template-columns:repeat(12,minmax(0,1fr));
@@ -1703,7 +1703,7 @@
 }
 #exploration-groups .work-grid[data-layout="surreal"] .work-item:hover{filter:none}
 @media(max-width:700px){
-  #exploration-groups .explore-group:nth-child(3) .group-head::after{content:none}
+  #exploration-groups .explore-group[data-group="surreal"] .group-head::after{content:none}
   #exploration-groups .work-grid[data-layout="surreal"]{
     min-height:0;grid-template-columns:repeat(12,minmax(0,1fr));
     grid-template-rows:auto auto auto auto;
@@ -1774,12 +1774,12 @@
 }
 
 /* Surreal & Playful — fit Lemon Hotel and Dragon video in their new order. */
-#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
   grid-column:8 / span 5;grid-row:1;aspect-ratio:1856 / 2304;
   width:100%;margin-top:clamp(12px,1.8vw,24px);z-index:4;
   transform:translateX(1%) rotate(.6deg)
 }
-#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{
   inset:-8% -9% -5% -10%;
   background:
     linear-gradient(128deg,rgba(37,185,176,.34) 0 19%,transparent 19.3% 100%),
@@ -1789,13 +1789,13 @@
   clip-path:polygon(8% 0,87% 7%,100% 30%,91% 54%,100% 92%,57% 100%,26% 91%,0 82%,8% 49%,0 23%);
   transform:rotate(1.8deg)
 }
-#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
   grid-column:8 / span 5;grid-row:2;
   width:100%;aspect-ratio:var(--media-ratio,.5625 / 1);
   margin-top:clamp(24px,3vw,42px);z-index:3;
   transform:translateX(1%) rotate(-.8deg)
 }
-#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{
+#exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{
   inset:-9% -13% -5% -13%;
   background:
     linear-gradient(145deg,rgba(37,185,176,.8) 0 17%,rgba(176,151,213,.45) 17.2% 32%,transparent 32.2%),
@@ -1805,15 +1805,15 @@
   transform:rotate(-2deg)
 }
 @media(max-width:700px){
-  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
     grid-column:1 / span 8;grid-row:2;aspect-ratio:1856 / 2304;
     margin:0;transform:rotate(-.45deg)
   }
-  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
     grid-column:4 / span 8;grid-row:3;
     aspect-ratio:var(--media-ratio,.5625 / 1);margin:0;
     transform:rotate(.7deg)
   }
-  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{inset:-7% -9% -5% -10%}
-  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{inset:-9% -12% -5% -12%}
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3)::before{inset:-7% -9% -5% -10%}
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2)::before{inset:-9% -12% -5% -12%}
 }
