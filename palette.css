@@ -1867,3 +1867,35 @@
     margin-top:clamp(42px,4.3vw,64px)
   }
 }
+
+/* Checklist polish pass: keep the approved compositions, refine type and details. */
+:root{--sans:'Space Grotesk',Arial,sans-serif}
+#creative-explorations .group-head p{font-size:12px}
+.explore-intro h2 i{color:#7b5ca6}
+.contact h2 i{color:#ee8b5e}
+.email-placeholder{font-size:12px}
+.project-meta h3,.group-head h3{font-family:'Space Grotesk',Arial,sans-serif}
+.project-fashion .project-meta h3::after,.project-fragrance .project-meta h3::after{background-image:none}
+.project-jewelry .project-meta h3::after{background:#b9b8b8!important}
+.projects{width:min(100%,1600px);margin-inline:auto}
+.video-frame.is-playing .video-toggle{opacity:0;pointer-events:auto}
+.video-frame .video-toggle{transition:opacity .2s}
+.video-frame.is-playing:hover .video-toggle,.video-frame.is-playing:focus-within .video-toggle{opacity:1}
+@media(max-width:700px){
+  .video-frame.is-playing .video-toggle{opacity:0}
+  .video-frame.is-playing .portfolio-video{object-fit:contain}
+  .explore-group[data-group="beauty"] .work-item.video-work{width:80%;margin-left:10%}
+  .explore-group[data-group="beauty"] .work-grid::before{opacity:.9;filter:none}
+  .explore-group[data-group="beauty"] .work-grid::after{opacity:.85;filter:none}
+  .explore-group[data-group="beauty"] .work-grid::after{content:"GLOSS";position:absolute;right:3%;top:12%;font:10px var(--mono);letter-spacing:.16em;color:#7a345f}
+  .email-placeholder{font-size:13px}
+}
+@media(min-width:701px){
+  .explore-group[data-group="fashion"] .work-grid::after{content:"";position:absolute;right:-2%;bottom:-24px;width:88px;height:16px;border-radius:70% 30% 60% 40%;background:#e59b4d;opacity:.55;transform:rotate(-18deg)}
+  .explore-group[data-group="surreal"] .work-grid::after{filter:none}
+  .project-fashion .carousel::before,.project-jewelry .carousel::before,.project-fragrance .carousel::before{background-image:none}
+  .work-grid[data-layout="beauty"] .work-item.video-work{transform:scale(1.08);transform-origin:center}
+}
+.site-header{opacity:1;visibility:visible;animation:none!important}
+.site-header .brand,.site-header .language{opacity:1;visibility:visible}
+.explore-intro h2 i,.contact h2 i{transition:color .2s}
