@@ -1846,3 +1846,24 @@
     margin:0;transform:rotate(-.45deg)
   }
 }
+
+/* Surreal & Playful — slightly tighter desktop composition. */
+@media(min-width:701px){
+  #exploration-groups .work-grid[data-layout="surreal"]{
+    min-height:0;
+    row-gap:clamp(16px,1.7vw,26px);
+    padding:8px 0 clamp(26px,3vw,40px)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item{
+    width:94%;justify-self:center
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(2){
+    margin-top:clamp(14px,1.8vw,24px)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(3){
+    margin-top:clamp(8px,1vw,14px)
+  }
+  #exploration-groups .work-grid[data-layout="surreal"] .work-item:nth-child(4){
+    margin-top:clamp(42px,4.3vw,64px)
+  }
+}
