@@ -102,8 +102,8 @@ function makeMedia(title,kind,bg,key){
       }
       if(video.paused)video.currentTime=Math.max(video.duration-.06,0)
     });
-    video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()});updateToggle()});
-    video.addEventListener('pause',updateToggle);
+    video.addEventListener('play',()=>{document.querySelectorAll('.portfolio-video').forEach(other=>{if(other!==video)other.pause()});frame.classList.add('is-playing');updateToggle()});
+    video.addEventListener('pause',()=>{frame.classList.remove('is-playing');updateToggle()});
     video.addEventListener('ended',()=>{video.currentTime=Math.max(video.duration-.06,0);updateToggle()});
     toggle.addEventListener('click',()=>{if(video.paused){if(video.currentTime>=video.duration-.2)video.currentTime=0;video.play().catch(()=>updateToggle())}else video.pause()});
     frame.append(video,toggle);return frame;
