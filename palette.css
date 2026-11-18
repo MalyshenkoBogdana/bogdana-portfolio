@@ -1959,3 +1959,14 @@
   #exploration-groups .explore-group:not(:last-child)::after{bottom:-25px;width:48px;height:6px}
   #exploration-groups .explore-group:nth-child(2)::after{left:18%;width:44px;height:6px}
 }
+
+@media(max-width:700px){
+  #creative-explorations .explore-group:nth-child(1)::before{
+    inset:-1% -2%;
+    background:
+      radial-gradient(ellipse 42% 28% at 17% 24%,rgba(237,78,137,.46),transparent 74%),
+      radial-gradient(ellipse 35% 30% at 83% 38%,rgba(128,14,45,.34),transparent 68%),
+      radial-gradient(ellipse 28% 22% at 55% 84%,rgba(255,163,153,.42),transparent 72%);
+    filter:blur(7px);opacity:.96
+  }
+}
