@@ -128,7 +128,7 @@ document.querySelectorAll('.project').forEach(project=>{
 const gallery=document.querySelector('#exploration-groups');
 explorationData.forEach((group,index)=>{
   const section=document.createElement('section');section.className='explore-group';section.dataset.group=group.id;section.setAttribute('aria-labelledby',`group-${group.id}`);
-  const head=document.createElement('header');head.className='group-head';const h=document.createElement('h3');h.id=`group-${group.id}`;h.textContent=group.title;const desc=document.createElement('p');desc.textContent=group.description.uk;head.append(h,desc);
+  const head=document.createElement('header');head.className='group-head';const h=document.createElement('h3');h.id=`group-${group.id}`;h.innerHTML=group.title.replace(/&/g,'<span class="ampersand">&amp;</span>');const desc=document.createElement('p');desc.textContent=group.description.uk;head.append(h,desc);
   const grid=document.createElement('div');grid.className='work-grid';grid.dataset.layout=group.layout;
   group.items.forEach(([title,kind],itemIndex)=>{const item=document.createElement('div');item.className=`work-item${kind==='VIDEO'?' video-work':''}`;const palette=['var(--yellow)','var(--pink)','var(--turquoise)','var(--coral)'];item.append(makeMedia(title,kind,palette[itemIndex%palette.length],`gallery:${group.id}|${title}`));grid.append(item)});
   section.append(head,grid);gallery.append(section);
