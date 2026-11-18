@@ -1970,3 +1970,5 @@
     filter:blur(7px);opacity:.96
   }
 }
+.video-frame.is-playing:focus-within .video-toggle:not(:focus-visible){opacity:0}
+@media(max-width:700px){.video-frame.is-playing:focus-within .video-toggle:not(:focus-visible){opacity:0}}
