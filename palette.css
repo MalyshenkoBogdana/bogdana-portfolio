@@ -1897,3 +1897,65 @@
 .site-header{opacity:1;visibility:visible;animation:none!important}
 .site-header .brand,.site-header .language{opacity:1;visibility:visible}
 .explore-intro h2 i,.contact h2 i{transition:color .2s}
+
+
+/* Final responsive checklist corrections. */
+.site-header{display:flex!important;position:relative;z-index:20;visibility:visible!important;opacity:1!important;transform:none!important;animation:none!important}
+.site-header .brand,.site-header .language{visibility:visible!important;opacity:1!important;transform:none!important}
+.projects{width:min(100%,1480px);margin-inline:auto}
+.section-heading{max-width:1320px}
+.project-fashion{max-width:1280px}
+#creative-explorations .explore-intro h2 i{color:#7567c8}
+#creative-explorations .group-head p{font-size:12px;line-height:1.5}
+.contact h2 i{color:#4fae9d}
+.email-placeholder,.footer-email{font-size:12px}
+.ampersand{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.08em;display:inline-block;margin-inline:.035em}
+.project-jewelry .project-meta h3::after{
+  clip-path:polygon(0 48%,8% 38%,18% 43%,29% 31%,42% 39%,54% 26%,67% 36%,79% 29%,91% 36%,100% 28%,98% 66%,87% 73%,72% 64%,57% 80%,42% 67%,27% 79%,12% 66%,2% 72%);
+  background:#c9cacc!important;
+  background-image:linear-gradient(100deg,#a9aaad 0%,#f5f4f1 20%,#c3c4c6 43%,#ecebea 64%,#afb1b3 82%,#f7f6f3 100%)!important;
+  background-size:100% 100%;box-shadow:0 1px 5px rgba(137,137,139,.25)
+}
+.video-frame.is-playing .video-toggle{opacity:0;pointer-events:auto}
+.video-frame.is-playing:hover .video-toggle{opacity:0}
+.video-frame.is-playing .video-toggle:focus-visible{opacity:1}
+#creative-explorations .work-grid[data-layout="beauty"] .work-item.video-work:nth-child(3) .portfolio-video{background:transparent}
+#exploration-groups .explore-group:not(:last-child)::after{
+  width:clamp(54px,5vw,78px);height:7px;border:0;border-radius:0;
+  background:#c58b83;clip-path:polygon(0 45%,15% 30%,32% 47%,50% 25%,69% 42%,87% 20%,100% 34%,96% 68%,78% 76%,60% 60%,42% 82%,23% 63%,5% 75%);
+  transform:translateX(-50%) rotate(-4deg);opacity:.58
+}
+#exploration-groups .explore-group:nth-child(2)::after{
+  left:23%;width:58px;height:7px;border:0;border-radius:0;background:#8d9db7;
+  clip-path:polygon(0 45%,15% 30%,32% 47%,50% 25%,69% 42%,87% 20%,100% 34%,96% 68%,78% 76%,60% 60%,42% 82%,23% 63%,5% 75%);
+  transform:rotate(5deg);opacity:.62
+}
+#selected-projects .section-heading{position:relative}
+#selected-projects .section-heading::after{content:"";position:absolute;right:7%;top:14%;width:54px;height:6px;background:#b8a17c;clip-path:polygon(0 40%,20% 20%,42% 45%,66% 18%,100% 30%,94% 70%,70% 83%,48% 60%,25% 88%,5% 70%);transform:rotate(-9deg);pointer-events:none}
+#exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::after{
+  content:""!important;position:absolute;z-index:5;right:-3%;bottom:13%;width:clamp(60px,7vw,102px);height:9px;
+  background:#c3a46e;clip-path:polygon(0 45%,17% 24%,36% 43%,55% 18%,75% 38%,100% 20%,96% 68%,76% 78%,56% 60%,37% 85%,18% 65%,3% 74%);
+  transform:rotate(-7deg);pointer-events:none
+}
+#exploration-groups .work-grid[data-layout="surreal"] .work-item .portfolio-image,
+#exploration-groups .work-grid[data-layout="surreal"] .work-item .portfolio-video{background:transparent}
+@media(min-width:701px){
+  .section-heading{width:min(100%,1320px)}
+}
+@media(max-width:700px){
+  .projects{width:100%}
+  .section-heading::after{right:2%;top:10%;width:38px;height:5px}
+  #creative-explorations .group-head p{font-size:12px;max-width:88%;margin-top:10px}
+  .contact h2 i{color:#4fae9d}
+  .email-placeholder,.footer-email{font-size:13px}
+  .video-frame.is-playing .video-toggle{opacity:0;pointer-events:auto}
+  .video-frame.is-playing:hover .video-toggle{opacity:0}
+  #creative-explorations .work-grid[data-layout="beauty"]::after{
+    z-index:5;left:5%;top:43%;font-size:clamp(58px,16vw,78px);color:rgba(111,20,50,.78);
+    text-shadow:0 1px 12px rgba(247,243,237,.75)
+  }
+  .explore-group[data-group="beauty"] .work-item.video-work{width:90%;margin-left:5%}
+  #exploration-groups .work-grid[data-layout="fashion"] .work-item:nth-child(3)::after{right:2%;bottom:8%;width:64px;height:7px}
+  #exploration-groups .explore-group:not(:last-child)::after{bottom:-25px;width:48px;height:6px}
+  #exploration-groups .explore-group:nth-child(2)::after{left:18%;width:44px;height:6px}
+}
